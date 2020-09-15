@@ -1,0 +1,382 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+body{
+  margin: 0;
+}
+button{
+  position: absolute;
+  border: 0;
+  border-radius: 3px;
+  font-family: 'Noto Sans TC';
+  font-size: 14px;
+}
+img{
+  position: absolute;
+}
+input{
+  position: absolute;
+  padding: 0;
+  padding-left: 8px;
+  background: #EEEFEF;
+  border: 1px solid #9F9FA0;
+  border-radius: 3px;
+  color: #9F9FA0;
+  font-family: 'Noto Sans TC';
+  font-size: 12px;
+}
+
+.screen {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+.title{
+  position: absolute;
+  width: 100%;
+  top: 16.9%;
+  text-align: center;
+  font-family: 'Century Gothic';
+  font-weight: bold;
+  font-style: italic;
+  font-size: 24px;
+  color: #717071;
+}
+.remarks{
+  position: absolute;
+  width: 100%;
+  height: 7.4%;
+  top: 79.7%;
+  text-align: center;
+  font-family: 'Noto Sans TC';
+  font-size: 0.0375vw;
+  color: #717071;
+}
+.sign-up-or-not{
+  position: absolute;
+  width: 100%;
+  top: 88.3%;
+  text-align: center;
+  font-family: 'Noto Sans TC';
+  font-size: 0.0375vw;
+  color: #221814;
+}
+.back-arrow{
+  width: 6.7%;
+  top: 4.3%;
+  left: 7.6%;
+}
+
+
+
+
+/*page-logo*/
+#page-logo{
+  display: none;
+}
+#logo {
+  top: 39.2%;
+  left: 42.3%;
+  height: 19.6%;
+}
+
+/* sign-up & sign-in entry */
+#header{
+ top: 4.8%;
+ left: 31.2%;
+ width: 37.1%;
+}
+#fb{
+  position: absolute;
+  width: 78.1%;
+  height: 5.6%;
+  top: 22%;
+  left: 10.9%;
+  background-color: blue;
+}
+#google{
+  position: absolute;
+  width: 78.1%;
+  height: 5.6%;
+  top: 29%;
+  left: 10.9%;
+  background-color: red;
+}
+#sep-or{
+  width: 78.1%;
+  position: absolute;
+  top: 38.2%;
+  left: 10.9%;
+  margin: 0;
+}
+.sign-up-info{
+  left: 10.9%;
+  width: 75%;
+  height: 6.2%;
+}
+#sign-up-email{
+  top: 41.7%;
+}
+#sign-up-phone{
+  top: 49.3%;
+}
+#sign-up-user-name{
+  top: 56.9%;
+}
+#sign-up-password{
+  top: 64.4%;
+}
+#sign-up-submit{
+  left: 10.9%;
+  width: 78.1%;#verify-to-sign-up{
+  position: absolute;
+  width: 100%;
+  top: 88.3%;
+  text-align: center;
+  font-family: 'Noto Sans TC';
+  font-size: 0.0375vw;
+  color: #221814;
+}
+
+
+  height: 5.6%;
+  top: 72%;
+  background-color: #2C50A1;
+  color: white;
+}
+
+/* verification page */
+#page-verify{
+  display: none;
+}
+#pic-verify{
+  width: 77.1%;
+  top: 31.9%;
+  left: 11.3%;
+}
+#sign-up-verify-code{
+  left: 10.9%;
+  width: 75%;
+  height: 6.2%;
+  top: 64.4%;
+}
+#send-verify-code{
+  width: 78.1%;
+  height: 5.6%;
+  left: 10.9%;
+  top: 72%;
+  color: white;
+  background-color: #2C50A1;
+}
+#send-verify-code-again{
+  position: absolute;
+  width: 100%;
+  top: 79.7%;
+  text-align: center;
+  border-radius: 3px;
+}
+#send-verify-code-again-a{
+  color: #717071;
+  font-size: 0.0375vw;
+  font-family: 'Noto Sans TC';
+}
+
+/* credit card page */
+#page-credit-card{
+  display: none; 
+}
+#pic-credit-card{
+  width: 45.8%;
+  left: 21.4%;
+  top: 30.4%;
+}
+#skip-credit-card{
+  width: 23.4%;
+  height: 5.6%;
+  top: 72%;
+  left: 11.2%;
+  background-color: #E8C41C;
+}
+#submit-credit-card{
+  width: 52.8%;
+  height: 5.6%;
+  top: 72%;
+  left: 35.9%;
+  background-color: #2C50A1;
+  color: white;
+}
+#credit-card-1-4{
+  height: 6.2%;
+  width: 16.6%;
+  top: 49.3%;
+  left: 10.9%;
+  text-align: center;
+  padding: 0px;
+}
+#credit-card-5-8{
+  height: 6.2%;
+  width: 16.6%;
+  top: 49.3%;
+  left: 31.3%;
+  text-align: center;
+  padding: 0px;
+}
+#credit-card-9-12{
+  height: 6.2%;
+  width: 16.6%;
+  top: 49.3%;
+  left: 51.6%;
+  text-align: center;
+  padding: 0px;
+}
+#credit-card-13-16{
+  height: 6.2%;
+  width: 16.6%;
+  top: 49.3%;
+  left: 71.9%;
+  text-align: center;
+  padding: 0px;
+}
+#dashmark{
+  width: 70%;
+  position: absolute;
+  top: 52.4%;
+  left: 13%;
+  margin: 0;
+}
+#credit-card-owner{
+  width: 75%;
+  height: 6.2%;
+  top: 56.9%;
+  left: 10.9%;
+}
+#valid-time-holder{
+  position: absolute;
+  width: 78.1%;
+  height: 6.2%;
+  top: 64.4%;
+  left: 10.9%;
+  background-color: #9F9FA0;
+  border-radius: 3px;
+}
+#valid-time-year{
+  width: 24%;
+  height: 94.3%;
+  left: 0;
+  text-align: center;
+  padding: 0;
+}
+#valid-time-month{
+  width: 24%;
+  height: 94.3%;
+  left: 24.8%;
+  text-align: center;
+  padding: 0;
+}
+#cvv{
+  width: 22%;
+  height: 94.3%;
+  right: 0;
+  text-align: center;
+  padding: 0;
+}
+
+
+/* location page */
+#page-locate{
+  display: none;
+}
+#pic-locate{
+  width: 77.1%;
+  top: 31.9%;
+  left: 11.3%;
+}
+#send-locate{
+  width: 78.1%;
+  height: 5.6%;
+  top: 72%;
+  left: 11.2%;
+  background-color: #F08719;
+  color: white;
+}
+#location{
+  left: 10.9%;
+  width: 75%;
+  height: 6.2%;
+  top: 64.4%;
+}
+
+
+/* sign in page: account */
+#page-sign-in-account{
+  display: none;
+}
+#pic-sign-in-account{
+  width: 77.1%;
+  top: 31.9%;
+  left: 11.3%;
+}
+#send-account{
+  width: 78.1%;
+  height: 5.6%;
+  left: 10.9%;
+  top: 72%;
+  color: white;
+  background-color: #2C50A1;
+}
+#phone-or-email{
+  left: 10.9%;
+  width: 75%;
+  height: 6.2%;
+  top: 64.4%;
+}
+
+
+/* sign in page: password */
+#page-sign-in-password{
+  display: none;
+}
+#pic-sign-in-password{
+  width: 77.1%;
+  top: 31.9%;
+  left: 11.3%;
+}
+#send-password{
+  width: 78.1%;
+  height: 5.6%;
+  left: 10.9%;
+  top: 72%;
+  color: white;
+  background-color: #2C50A1;
+}
+#sign-in-password{
+  left: 10.9%;
+  width: 75%;
+  height: 6.2%;
+  top: 64.4%;
+}
+
+
+/* sign in page: verify */
+#page-sign-in-verify{
+  display: none;
+}
+#pic-sign-in-verify{
+  width: 31.8%;
+  top: 33.7%;
+  left: 33.9%;
+}
+#sign-in-send-verify-code{
+  width: 78.1%;
+  height: 5.6%;
+  left: 10.9%;
+  top: 72%;
+  color: white;
+  background-color: #2C50A1;
+}
+#sign-in-verify-code{
+  left: 10.9%;
+  width: 75%;
+  height: 6.2%;
+  top: 64.4%;
+}
+

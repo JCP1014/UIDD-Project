@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./login.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Step 2 code here-->
+    <!-- for iOS -->
+    <link rel="apple-touch-icon" sizes="144x144" href="./src/VOCA-144x144.png"/>
+    <link rel="manifest" href="./manifest.json">
+    <title>LockerStore LOGO</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet"/>
+  </head>
+  <body>
+    <!-- logo page -->
+    <div id="page-logo" class="screen">
+      <img id="logo" src="./src/LOGO.svg">
+    </div>
+    
+    <!-- sign in & sign up page -->
+    <div id="page-sign-up" class="screen">
+      <img id="header" src="./src/header.svg">
+      <div id="fb">使用fb登入</div>
+      <div id="google">使用google登入</div>
+      <hr id="sep-or"/>
+      <input placeholder="電子郵件" type="text" class="sign-up-info" id="sign-up-email"/>
+      <input placeholder="手機號碼" type="text" class="sign-up-info" id="sign-up-phone"/>
+      <input placeholder="用戶名稱" type="text" class="sign-up-info" id="sign-up-user-name"/>
+      <input placeholder="密碼" type="text" class="sign-up-info" id="sign-up-password"/>
+      <button id="sign-up-submit" type="button" onclick="SwitchToVerify()">註冊</button> 
+      <div class="remarks">
+        <p>註冊即表示您同意我們的服務條款，</p>
+        <p>資料政策和Cookie政策。</p>
+      </div>
+      <div class="sign-up-or-not">
+        <p>已經有帳號？<a href='javascript: SwitchToSigninAccount()'>登入</a></p>
+      </div>
+    </div>
+
+    <!-- verification page -->
+    <div id="page-verify" class="screen">
+      <img class="back-arrow" src="./src/back-arrow.svg" onclick="SwitchToSignup()">
+      <div class="title">
+        Have a great day :)
+      </div> 
+      <img id="pic-verify" src="./src/pic-verify.svg">
+      <input placeholder="請輸入四位數驗證碼" type="text" id="sign-up-verify-code"/>
+      <button id="send-verify-code" type="button" onclick="SwitchToCreditcard()">下一步</button>
+      <div id="send-verify-code-again">
+        <a id="send-verify-code-again-a"href='javascript: '>再次傳送驗證碼</a>
+      </div>
+		  <div class="sign-up-or-not">
+        <p>已經有帳號？<a href='javascript: SwitchToSigninAccount()'>登入</a></p>
+      </div>
+    </div>
+
+    <!-- credit card page -->
+    <div id="page-credit-card" class="screen">
+      <div class="title">
+        Faster and easier !
+      </div> 
+      <img id="pic-credit-card" src="./src/pic-credit-card.svg">
+      <hr id="dashmark"/>
+      <input id="credit-card-1-4" type="text" inputmode="numeric" maxlength="4" placeholder="0000"/>
+      <input id="credit-card-5-8" type="text" inputmode="numeric" maxlength="4" placeholder="0000"/>
+      <input id="credit-card-9-12" type="text" inputmode="numeric" maxlength="4" placeholder="0000"/>
+      <input id="credit-card-13-16" type="text" inputmode="numeric" maxlength="4" placeholder="0000"/>
+      <input id="credit-card-owner" type="text" placeholder="信用卡持有人"/>
+      <div id="valid-time-holder">
+        <input id="valid-time-year" type="test" inputmode="numeric" maxlength="2" placeholder="到期年"/>
+        <input id="valid-time-month" type="test" inputmode="numeric" maxlength="2" placeholder="月"/>
+        <input id="cvv" type="test" inputmode="numeric" maxlength="3" placeholder="CVV"/>
+      </div>
+      <button id="skip-credit-card" style="button" onclick="SwitchToLocate()">略過</button>
+      <button id="submit-credit-card" style="button" onclick="SwitchToLocate()">下一步</button>
+      <div class="remarks">
+        <p>輕鬆綁定，讓你快速又方便</p>
+      </div>
+      <div class="sign-up-or-not">
+        <p>已經有帳號？<a href='javascript: SwitchToSigninAccount()'>登入</a></p>
+      </div>
+    </div>
+
+    <!-- location page -->
+    <div id="page-locate" class="screen">
+      <div class="title">
+        Let's have fun !
+      </div> 
+      <img id="pic-locate" src="./src/pic-locate.svg">
+      <input placeholder="請輸入你的地址" type="text" id="location"/>
+      <button id="send-locate">完成</button>
+      <div class="remarks">
+        <p>開始使用</p>
+      </div>
+      <div class="sign-up-or-not">
+        <p>已經有帳號？<a href='javascript: SwitchToSigninAccount()'>登入</a></p>
+      </div>
+    </div>
+
+    <!-- sign in page: account -->
+    <div id="page-sign-in-account" class="screen">
+      <div class="title">
+        Welcome back !
+      </div> 
+      <img id="pic-sign-in-account" src="./src/pic-sign-in-account.svg">
+      <input placeholder="請輸入你的手機號碼或電子信箱" type="text" id="phone-or-email"/>
+      <button id="send-account" type="button" onclick="SwitchToSigninPassword()">下一步</button>
+      <div class="remarks">
+        <p>歡迎回來</p>
+      </div>
+      <div class="sign-up-or-not">
+        <p>還沒有帳號嗎？<a href='javascript: SwitchToSignup()'>快來創立帳號</a></p>
+      </div>
+    </div>
+
+    <!-- sign in page: password -->
+    <div id="page-sign-in-password" class="screen">
+      <img class="back-arrow" src="./src/back-arrow.svg" onclick="SwitchToSigninAccount()">
+      <div class="title">
+        Glad to see you !
+      </div> 
+      <img id="pic-sign-in-password" src="./src/pic-sign-in-password.svg">
+      <input placeholder="請輸入你的密碼" type="text" id="sign-in-password"/>
+      <button id="send-password" type="button" onclick="SwitchToSigninVerify()">下一步</button>
+      <div class="remarks">
+        <p>很高興再次與你相見</p>
+      </div>
+      <div class="sign-up-or-not">
+        <p>忘記密碼？<a href='javascript: SwitchToForget()'>不用擔心</a></p>
+      </div>
+    </div> 
+
+    <!-- sign in page: verify -->
+    <div id="page-sign-in-verify" class="screen">
+      <div class="title">
+        Great !
+      </div> 
+      <img id="pic-sign-in-verify" src="./src/pic-sign-in-verify.svg">
+      <input placeholder="請輸入四位數驗證碼" type="text" id="sign-in-verify-code"/>
+      <button id="sign-in-send-verify-code" type="button" onclick="SwitchToLocate()">下一步</button>
+      <div id="send-verify-code-again">
+        <a id="send-verify-code-again-a"href='javascript: '>再次傳送驗證碼</a>
+      </div>
+      <div class="sign-up-or-not">
+        <a href='javascript: '>幫助</a>
+      </div>
+
+    </div> 
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="./src/app.js"></script>
+    <script src="./login.js"></script>
+  </body>
+</html>

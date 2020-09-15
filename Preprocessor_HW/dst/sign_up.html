@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Sign up</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="./public/images/about_us/part5/part5-logo.svg">
+    <link href="./sign_up.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&amp;display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <!-- ---------------------Top page----------------------->
+    <div>
+      <header class="header">
+        <!-- ---------------------Upper left logo-----------------------><a href="./index.html"><img class="logo" src="./public/images/about_us/part1/logo+typo.svg" alt="logo+typo"></a>
+        <!-- ---------------------Top navigation bar----------------------->
+        <nav class="main_nav">
+          <ul class="menu">
+            <li><a class="btn" href="./index.html#What_we_do">What we do</a></li>
+            <li><a class="btn" href="./index.html#Our_approach">Our approach</a></li>
+            <li><a class="btn" href="./index.html#Who_we_are">Who we are</a></li>
+            <li><a class="btn" href="./index.html#Contact_us">Contact us</a></li>
+          </ul>
+        </nav>
+      </header>
+      <!-- ---------------------Middle content----------------------->
+      <div class="home" id="home"><img class="image" src="./public/images/about_us/part1/background-no-word.svg" alt="background-no-word">
+        <p id="userName">User</p>
+        <p id="t1">Success</p>
+        <p id="t2">Welcome</p>
+        <form id="ajax-form">
+          <label>Account: </label>
+          <input type="text" name="account" maxlength="15" size="15"><br><br>
+          <label>Password: </label>
+          <input type="password" name="password" size="15"><br><br>
+          <label>Confirmed Password: </label>
+          <input type="password" size="15" name="password_2">
+          <button id="submit_btn" type="submit">Submit</button>
+        </form>
+        <p id="check_same"></p>
+        <p id="t3"></p>
+      </div>
+      <script src="./sign_up.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+      <script src="./index.js"></script>
+      <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+    </div>
+  </body>
+</html>

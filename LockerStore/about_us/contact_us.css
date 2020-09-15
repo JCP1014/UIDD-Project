@@ -1,0 +1,26 @@
+#part7 {
+    position: relative;
+}
+#info_left {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 17%;
+}
+#info_right {
+    position: absolute;
+    top: 20%;
+    left: 72.5%;
+    width: 9.2%;
+}
+.blog {
+    width: 10%;
+    position: absolute;
+    top: 64.5%;
+    left: 69.7%;
+}
+.icon {
+    display: inline-block;
+    width: 26.5%;
+    padding: 0 1% 0 0;
+}

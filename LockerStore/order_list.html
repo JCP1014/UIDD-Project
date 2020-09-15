@@ -1,0 +1,99 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<title>Ordered Item Page</title>
+	<link rel="Shortcut Icon" type="image/x-icon" href="./public/images/about_us/part5/part5-logo.svg" />
+	<script src="./public/stylesheets/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="./order_list.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+	
+	<div class="float_window">
+		<br><h1 class="title">購買清單</h1><br>
+		<form class="form-inline order-navbar">
+                        <button class="btn order-nav-lbtn" type="button" onclick="showLeft()">未出貨</button>
+                        <button class="btn order-nav-mbtn" type="button" onclick="showMid()">已送達</button>
+                        <button class="btn order-nav-rbtn" type="button" onclick="showRight()">已完成</button>
+                    </form>
+		
+		<div class="order-content order-content-left">
+                        <div class="order-object">
+                            <div class="order-object-content">
+                                <div class="order-object-content-pic"></div>
+                                <div class="order-object-content-info">
+                                    <div class="order-object-content-info-text">
+                                        <p class="store-name">店家名稱</p>
+                                        <!--p class="text-content">0912-345-678<br>701, Tainan City, East District, Yidong Road, No.50, 2F</p-->
+                                        <p class="station-name">櫃站名稱</p>
+                                        <!--p class="text-content">Pickup address 701, Tainan City, East District, Shengli Road, No.58</p-->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="order-object-detail">
+                                <div class="order-object-detail-fake"></div>
+                                <div class="order-object-detail-content">
+                                    <div class="order-object-detail-content-item">
+                                        <div class="product-name">
+                                            <p class="product-name-text">商品名稱</p>
+                                            <p class="product-name-remark">選項:少冰</p>
+                                        </div>
+                                        <div class="product-number">
+                                           6
+                                        </div>
+                                        <div class="product-price">
+                                            <p class="product-price-text">$100</p>
+                                        </div>
+                                    </div>
+                                    <div class="order-object-detail-content-item">
+                                        <div class="product-name">
+                                            <p class="product-name-text">Product name</p>
+                                            <p class="product-name-remark">No ice</p>
+                                        </div>
+                                        <div class="product-number">
+                                            2
+                                        </div>
+                                        <div class="product-price">
+                                            <p class="product-price-text">$100</p>
+                                        </div>
+                                    </div>
+                                    <div class="order-object-detail-content-item">
+                                        <div class="product-name">
+                                            <p class="product-name-text">Product name</p>
+                                            <p class="product-name-remark">No ice</p>
+                                        </div>
+                                        <div class="product-number">
+                                            4
+                                        </div>
+                                        <div class="product-price">
+                                            <p class="product-price-text">$100</p>
+                                        </div>
+                                    </div>
+                                    <img class="payment-img" src="public/images/a6/a6-36.svg" />
+                                    <p class="order-number">Order number : 01234567</p>
+                                    <p class="pickup-code">Pick-up Code : A1B2C3D4</p>
+                                </div>
+                            </div>
+                            <div class="order-object-bottom">
+                                <img class="group-buy" src="public/images/a6/a6-14.svg" />
+                                <p class="delivery-time">Estimated delivery time : 2020.05.20</p>
+                                <button type="button" class="btn arrow-btn" onclick="showDetail()">
+                                    <img class="arrow-img" src="public/images/a6/a6-22.svg" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+  </div> <!--float_window-->
+  
+  <script src='./order_list.js'></script>
+	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+    </html>

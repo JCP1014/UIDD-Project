@@ -1,0 +1,1570 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>LockerStore</title>
+    <link rel="Shortcut Icon" type="image/x-icon" href="./public/images/about_us/part5/part5-logo.svg" />
+    <script src="./public/stylesheets/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="./app.css" rel="stylesheet" type="text/css" />
+    <link href="./personal.css" rel="stylesheet" type="text/css" />
+    <link href="./shopping-cart.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./order-list.css" />
+</head>
+
+<body>
+    <div id="map-canvas"></div>
+    <div class="container-fluid layer onMap_top">
+        <div class="main_rect">
+            <div class="on-map" id="searchBox">
+                <img class="btn btn-square menuIcon" id="menu_btn" src="public/images/a1/a1-04.svg" alt="a1-04">
+                <div id="keywordOuter"></div>
+                <input class="color-blue" type="text" id="keywordBlank" name="keyword" placeholder="# 今天你想要來點什麼 :)"
+                    size="20">
+                <div class="color-gray" id="relatedTag"></div>
+                <img class="btn btn-square" id="clear_btn" src="public/images/a1/a1-21.svg" alt="a1-21"
+                    style="display:none">
+                <img class="btn btn-round" id="photo_btn" src="public/images/a2/a2-42.svg" alt="a2-42">
+                <img class="btn btn-square explore_btn dropIcon" id="dropDown_btn" src="public/images/a1/a1-06.svg"
+                    alt="a1-06">
+                <a class="explore_btn" id="dropDown_txt">
+                    # 探索你身邊的好物與本日推薦
+                </a>
+                <img class="btn btn-square" id="save_btn" src="public/images/a3/a3-36.svg" alt="a3-36"
+                    style="display:none">
+                <img class="btn btn-square" id="cancel_btn" src="public/images/a3/a3-37.svg" alt="a3-37"
+                    style="display:none">
+
+                <div class="sorterBox_before sorterBox">
+                    <img id="short_outer" src="public/images/b1/開始使用部分切圖用-64.svg" alt="b1-64">
+                    <img id="usedSorter" src="public/images/a2改/enabled_1.svg" alt="used">
+                    <img class="btn btn-square" id="more_btn" src="public/images/a2/a2-11.svg" alt="a2-11">
+                </div>
+                <div class="sorterBox_after sorterBox" style="display:none">
+                    <img id="extendSorter" src="public/images/a2改/a2改-01.svg" alt="a2改-01">
+                    <img id="sorter_left" src="public/images/a2改/enabled_1.svg" alt="left">
+                    <div class="sorter">
+                        <img class="btn btn-square" id="sorter_star" src="public/images/a2改/disabled_1.svg" alt="star">
+                        <img class="btn btn-square" id="sorter_heart" src="public/images/a2改/enabled_2.svg" alt="heart">
+                        <img class="btn btn-square" id="sorter_money" src="public/images/a2改/enabled_3.svg" alt="money">
+                        <img class="btn btn-square" id="sorter_group" src="public/images/a2改/enabled_4.svg" alt="group">
+                    </div>
+                </div>
+            </div>
+            <div class="on-map" id="nameBox">
+                <input class="color-normal" type="text" id="shopName">
+                <img class="btn btn-square" id="back_btn" src="public/images/b1/開始使用部分-11.svg" alt="b1-11">
+            </div>
+            <div class="card collapse" id="explore_card">
+                <div class="card_top">
+                </div>
+                <div class="d-flex flex-column on-card scrollbar card-content">
+                    <div id="explore_content">
+                        <button type="button" class="explore list-group-item list-group-item-action rounded-0"
+                            id="setHome_btn">
+                            <div class="explore d-flex align-items-start">
+                                <img class="explore icon" src="public/images/a3/a3-11.svg" alt="a3-11" id="home">
+                                <div class="explore txt mr-auto">
+                                    <p class="explore title font-12 color-blue">住家</p>
+                                    <p class="explore subtitle font-10" id="homeAddr">輸入地址</p>
+                                </div>
+                                <img class="btn btn-square explore rightBtn align-self-center"
+                                    src="public/images/a3/a3-16.svg" alt="a3-16">
+                            </div>
+                        </button>
+                        <button type="button" class="explore list-group-item list-group-item-action rounded-0"
+                            id="setWork_btn">
+                            <div class="explore d-flex align-items-start">
+                                <img class="explore icon" src="public/images/a3/a3-06.svg" alt="a3-06" id="work">
+                                <div class="explore txt mr-auto">
+                                    <p class="explore title font-12 color-blue">工作場所</p>
+                                    <p class="explore subtitle font-10" id="workAddr">輸入地址</p>
+                                </div>
+                                <img class="btn btn-square explore rightBtn align-self-center"
+                                    src="public/images/a3/a3-16.svg" alt="a3-16">
+                            </div>
+                        </button>
+                        <div class="explore list-group-item rounded-0 recommend init">
+                            <div class="explore d-flex align-items-start">
+                                <img class="explore icon" src="public/images/a3/a3-20.svg" alt="a3-20">
+                                <div class="explore txt mr-auto">
+                                    <p class="explore title font-12 color-blue">近期活動</p>
+                                    <p class="explore subtitle dark font-10">慶端午愛團購, 讓你品味出粽</p>
+                                </div>
+                                <img class="btn btn-square explore rightBtn align-self-center closeBtn"
+                                    src="public/images/a3/a3-23.svg" alt="a3-23">
+                            </div>
+                            <div class="d-flex align-items-start promotion detail">
+                                <div class="tag_container">
+                                    <div class="explore tag font-10"># 粽子 </div>
+                                    <div class="explore tag font-10"># 香包手作組 </div>
+                                    <div class="explore tag font-10"># 郭家肉粽 </div>
+                                    <div class="explore tag font-10"># 金榜題名粽 </div>
+                                    <div class="explore tag font-10"># 蛋黃粽 </div>
+                                    <div class="explore tag font-10"># 冰粽 </div>
+                                    <div class="explore tag font-10"># 親子香包手作材料 </div>
+                                    <div class="explore tag font-10"># 古早味肉粽 </div>
+                                </div>
+                                <!-- <img class="btn btn-square explore arrow align-self-end"
+                                    src="public/images/a3/a3-25.svg" alt="a3-25"> -->
+                            </div>
+                        </div>
+                        <div class="explore list-group-item rounded-0 recommend init" id="nearby">
+                            <div class="explore d-flex align-items-start">
+                                <img class="explore icon" src="public/images/a3/a3-28.svg" alt="a3-28">
+                                <div class="explore txt mr-auto">
+                                    <p class="explore title font-12 color-blue">熱門雷達</p>
+                                    <p class="explore subtitle dark font-10">探索附近的熱門商品</p>
+                                </div>
+                                <img class="btn btn-square explore rightBtn align-self-center closeBtn"
+                                    src="public/images/a3/a3-23.svg" alt="a3-23">
+                            </div>
+                            <div class="d-flex align-items-start nearby detail justify-content-between">
+                                <div class="d-flex flex-column align-items-center">
+                                    <img class="btn btn-square explore type-btn" src="public/images/b1/開始使用部分-15.svg"
+                                        alt="b1-15" id="food_btn">
+                                    <span class="type-txt font-8">找美食</span>
+                                </div>
+                                <div class="d-flex flex-column align-items-center">
+                                    <img class="btn btn-square explore type-btn" src="public/images/b1/開始使用部分-16.svg"
+                                        alt="b1-16" id="drinks_btn">
+                                    <span class="type-txt font-8">想解渴</span>
+                                </div>
+                                <div class="d-flex flex-column align-items-center">
+                                    <img class="btn btn-square explore type-btn" src="public/images/b1/開始使用部分-17.svg"
+                                        alt="b1-17" id="medical_btn">
+                                    <span class="type-txt font-8">顧民生</span>
+                                </div>
+                                <div class="d-flex flex-column align-items-center">
+                                    <img class="btn btn-square explore type-btn" src="public/images/b1/開始使用部分-18.svg"
+                                        alt="b1-18" id="other_btn">
+                                    <span class="type-txt font-8">其他</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="explore list-group-item rounded-0 recommend" id="type_result">
+                            <div class="explore d-flex align-items-start">
+                                <img class="explore icon" id="type_icon" src="public/images/a3/a3-44.svg" alt="a3-44">
+                                <div class="explore txt mr-auto">
+                                    <p class="explore title font-12 color-blue" id="type_title">找美食</p>
+                                    <p class="explore subtitle dark font-10">熱門搜尋標籤</p>
+                                </div>
+                                <img class="btn btn-square explore rightBtn align-self-center closeBtn"
+                                    src="public/images/a3/a3-23.svg" alt="a3-23">
+                            </div>
+                            <div class="d-flex align-items-start type detail">
+                                <div class="tag_container">
+                                    <div class="explore tag font-10"># 胖老爹炸雞 </div>
+                                    <div class="explore tag font-10"># 老友 </div>
+                                    <div class="explore tag font-10"># 港記燒臘 </div>
+                                    <div class="explore tag font-10"># 阿寶早餐 </div>
+                                    <div class="explore tag font-10"># 千香漢堡 </div>
+                                    <div class="explore tag font-10"># 早安山丘 </div>
+                                    <div class="explore tag font-10"># 傅家牛肉麵 </div>
+                                    <div class="explore tag font-10"># 好吃雞肉 </div>
+                                    <div class="explore tag font-10"># 四川麻辣串串香 </div>
+                                    <div class="explore tag font-10"># 巧味鹽酥雞 </div>
+                                </div>
+                                <img class="btn btn-square explore rightBtn align-self-end foldRank_btn ml-auto"
+                                    src="public/images/b1/開始使用部分-11.svg" alt="b1-11">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn btn-square explore on-card" id="foldCard_btn">
+                    <img id="foldCard_icon" src="public/images/b1/開始使用部分-22.svg" alt="b1-20">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid onMap_rise">
+        <div class="rise_rect">
+            <div class="card" id="result_card">
+                <div class="btn on-card" id="slipResult_btn">
+                    <img id="slipResult_icon" src="public/images/b1/開始使用部分-22.svg" alt="b1-20">
+                </div>
+                <div class="card-body scrollbar list-group" id="result_list">
+                    <div class="result_container" style="display:none">
+                        <div class="list-group-item list-group-item-action rounded-0 result on-card d-flex">
+                            <div class="result_content mr-auto">
+                                <p class="result_name color-normal font-14">Name</p>
+                                <div class="d-flex starBar align-items-center">
+                                    <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+                                    <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+                                    <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+                                    <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+                                    <img class="star" src="public/images/a2/a2-15.svg" alt="a2-15">
+                                    <span class="commentNum color-normal font-10">(200)</span>
+                                </div>
+                                <div class="d-flex moneyBar align-items-center">
+                                    <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+                                    <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+                                    <img class="money" src="public/images/a2/a2-32.svg" alt="a2-32">
+                                    <img class="dot" src="public/images/b1/開始使用部分-29.svg" alt="b1-29">
+                                    <div class="shopType align-self-center color-normal font-12"></div>
+                                </div>
+                                <div class="result_tag color-normal font-10">
+                                    # 好喝 # 便宜 ＃ 珍珠好吃
+                                </div>
+                            </div>
+                            <div class="result_right">
+                                <img class="result_pic" src="public/images/a2/a2-20.svg" alt="a2-20">
+                                <img class="btn btn-square likeBtn" src="public/images/a2/a2-19.svg" alt="a2-19">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid onMap_shop">
+        <div class="shop_rect d-flex flex-column">
+            <div class="d-flex flex-column" id="shopRect_top">
+                <div class="shopInfo_top">
+                    <img class="shopImg">
+                    <div class="d-flex shopInfo on-card">
+                        <div class="d-flex flex-column mr-auto shopInfo_left">
+                            <div class="d-flex starBar">
+                                <img class="star" src="public/images/b1/開始使用部分切圖用-66.svg" alt="b1-66">
+                                <img class="star" src="public/images/b1/開始使用部分切圖用-66.svg" alt="b1-66">
+                                <img class="star" src="public/images/b1/開始使用部分切圖用-66.svg" alt="b1-66">
+                                <img class="star" src="public/images/b1/開始使用部分切圖用-66.svg" alt="b1-66">
+                                <img class="star" src="public/images/b1/開始使用部分切圖用-66.svg" alt="b1-66">
+                            </div>
+                            <div class="d-flex moneyBar align-items-center">
+                                <img class="money" src="public/images/b1/開始使用部分-27.svg" alt="b1-27">
+                                <img class="money" src="public/images/b1/開始使用部分-27.svg" alt="b1-27">
+                                <img class="money" src="public/images/b1/開始使用部分-27.svg" alt="b1-27">
+                                <img class="dot" src="public/images/b1/開始使用部分-30.svg" alt="b1-30">
+                                <div class="shopType align-self-center color-white font-10">手搖飲料</div>
+                            </div>
+                        </div>
+                        <img class="btn btn-square switchTab_btn align-self-center" src="public/images/b1/開始使用部分-23.svg"
+                            alt="b1-23">
+                    </div>
+                </div>
+                <div class="moreBar collapse">
+                    <div class="d-flex">
+                        <div class="color-white font-9 mr-auto">更多店家資訊</div>
+                        <img class="btn btn-square optionBtn_right align-self-center" src="public/images/a4/a4-27.svg"
+                            alt="a4-27">
+                    </div>
+                </div>
+                <div class="moreInfo on-card">
+                    <div class="d-flex">
+                        <div class="d-flex flex-column mr-auto">
+                            <div class="d-flex align-items-start">
+                                <div class="color-white font-9 flex-shrink-0">店家位置&nbsp;:&nbsp;</div>
+                                <span class="shopAddr_txt color-white font-9"></span>
+                            </div>
+                            <div class="d-flex align-items-start mt-1">
+                                <div class="color-white font-9 flex-shrink-0">營業時間&nbsp;:&nbsp;</div>
+                                <span class="shopTime_txt color-white font-9"></span>
+                            </div>
+                        </div>
+                        <img class="btn btn-square optionBtn_right align-self-center flip"
+                            src="public/images/a4/a4-27.svg" alt="a4-27">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-auto" id="shop_card" style="display:none">
+                <div class="btn btn-square on-card" id="slipShop_btn">
+                    <img id="slipShop_icon" src="public/images/b1/開始使用部分-22.svg" alt="b1-20">
+                </div>
+                <div class="shopCard_top">
+                    <div class="single-item" id="tabContainer_single">
+                        <div class="d-flex tab_container single">
+                            <img class="btn btn-square tab_btn tabBtn-single select" id="hot_btn"
+                                src="public/images/b1/開始使用部分-37.svg" alt="b1-37">
+                            <img class="btn btn-square tab_btn tabBtn-single" id="cheap_btn"
+                                src="public/images/b1/開始使用部分-39.svg" alt="b1-39">
+                            <img class="btn btn-square tab_btn tabBtn-single" id="guess_btn"
+                                src="public/images/b1/開始使用部分-40.svg" alt="b1-40">
+                            <img class="btn btn-square tab_btn tabBtn-single" id="class_btn"
+                                src="public/images/b1/開始使用部分-42.svg" alt="b1-42">
+                        </div>
+                    </div>
+                    <div class="group-case" id="tabContainer_group" style="display:none;">
+                        <div class="d-flex tab_container group justify-content-between align-items-center">
+                            <div class="btn btn-square font-12 tab_btn tabBtn-group select" id="followGroup_btn">
+                                <span class="tabText-group">跟團享優惠</span>
+                            </div>
+                            <div class="font-12 color-normal">或</div>
+                            <div class="btn btn-square font-12 tab_btn tabBtn-group" id="openGroup_btn">
+                                <span class="tabText-group">揪團拚福利</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group-item" id="tabTitle" style="display:none;">
+                        <span class="color-blue font-12">團購活動精選商品，&nbsp;活動期間為</span>
+                        <span class="color-blue font-12" id="saleDate">07/01 - 08/31</span>
+                        <span>。</span>
+                    </div>
+                </div>
+                <div class="on-card scrollbar single-item shopCard_tab" id="singleItemTab">
+                    <div class="d-flex flex-column" id="singleItemList">
+                        <div class="d-flex shopItem" style="display:none;">
+                            <img class="shopItem_img">
+                            <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                                <div class="shopItem_name color-normal font-12"></div>
+                                <span class="shopItem_intro color-normal font-10 mb-auto"></span>
+                                <div class="shopItem_price color-normal font-10"></div>
+                            </div>
+                            <div class="d-flex flex-column shopItem_control">
+                                <img class="btn btn-square shopItem_plus" type="button"
+                                    src="./public/images/b1/開始使用部分-48.svg" alt="b1-48">
+                                <img class="btn btn-square shopItem_minus" type="button"
+                                    src="./public/images/b1/開始使用部分-49.svg" alt="b1-49">
+                            </div>
+                            <div class="itemAmount_txt color-blue">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="on-card scrollbar group-case shopCard_tab" id="groupCaseTab" style="display:none;">
+                    <div class="d-flex flex-column" id="groupCaseList">
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">5</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">5</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">長榮站&nbsp;-&nbsp;01</span>
+                                    <span class="groupDeadline font-10 color-normal">2020-07-02-16:00</span>
+                                    <span class="groupAddr font-10 color-normal">台南市東區長榮路三段139號</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                        <img class="peoplePhoto big" src="public/images/b2/團購-03.svg" alt="b2-03">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">十在滿意拚經濟</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">10</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">10</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">成醫站&nbsp;-&nbsp;01</span>
+                                    <span class="groupDeadline font-10 color-normal">2020-07-02-18:00</span>
+                                    <span class="groupAddr font-10 color-normal">台南市北區勝利路138號</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                        <img class="peoplePhoto big" src="public/images/b2/團購-03.svg" alt="b2-03">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">10</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">10</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">成醫站&nbsp;-&nbsp;01</span>
+                                    <span class="groupDeadline font-10 color-normal">2020-07-02-18:00</span>
+                                    <span class="groupAddr font-10 color-normal">台南市北區勝利路138號</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                        <img class="peoplePhoto big" src="public/images/b2/團購-03.svg" alt="b2-03">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                        <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06"
+                                            style="display: none;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="on-card scrollbar group-case shopCard_tab" id="openCaseTab" style="display:none;">
+                    <div class="d-flex flex-column" id="openCaseList">
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">5</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">5</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">選定櫃位</span>
+                                    <span class="groupDeadline font-10 color-normal">團購截止時間</span>
+                                    <span class="groupAddr font-10 color-normal">櫃位地址</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">十在滿意拚經濟</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">10</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">10</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">選定櫃位</span>
+                                    <span class="groupDeadline font-10 color-normal">團購截止時間</span>
+                                    <span class="groupAddr font-10 color-normal">櫃位地址</span>
+                                </div>
+                            </div>
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="on-card scrollbar shopCard_tab" id="setCaseTab" style="display:none;">
+                    <div class="d-flex flex-column" id="setCaseList">
+                        <div class="d-flex flex-column groupCase">
+                            <div class="d-flex mb-auto groupCase_top set">
+                                <div class="d-flex flex-column groupCase_left">
+                                    <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-normal">集滿</span>
+                                        <span class="target font-10 color-normal">5</span>
+                                        <span class="font-10 color-normal">份即享免運費</span>
+                                    </div>
+                                    <div style="line-height: 1.2rem;">
+                                        <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                        <span class="discount font-10 color-orange">5</span>
+                                        <span class="font-10 color-orange">&nbsp;元</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                                    <span class="groupLocker font-12 color-blue">選定櫃位</span>
+                                    <span class="groupDeadline font-10 color-normal">團購截止時間</span>
+                                    <span class="groupAddr font-10 color-normal">櫃位地址</span>
+                                    <span class="groupArrival font-10 color-orange">設定到貨時間</span>
+                                </div>
+                            </div>
+                            <input class="align-self-end" type="datetime-local" name="bdaytime" id="time-selector"
+                                onchange="timeChange()">
+                            <div class="groupCase_bottom">
+                                <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                                <div class="d-flex justify-content-around align-items-center progressPeople">
+                                    <div class="people">
+                                        <img class="circle big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                    <div class="people">
+                                        <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="on-map" id="shareBox" style="display: none;">
+                        <div class="d-flex align-items-center justify-content-around" id="shareBox_content">
+                            <div class="color-normal font-12 mr-4">分享給好友:&nbsp;</div>
+                            <div class="d-flex justify-content-between flex-grow-1" id="appBar">
+                                <img class="btn btn-square appIcon link_btn" src="public/images/b2/團購-18.svg"
+                                    alt="b2-18">
+                                <a class="line_btn">
+                                    <img class="btn btn-square appIcon" src="public/images/b2/團購-19.svg" alt="b2-19">
+                                </a>
+                                <img class="btn btn-square appIcon messenger_btn" src="public/images/b2/團購-20.svg"
+                                    alt="b2-20">
+                                <img class="btn btn-square appIcon facebook_btn" src="public/images/b2/團購-21.svg"
+                                    alt="b2-21">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="on-card scrollbar group-item shopCard_tab" id="groupItemTab" style="display:none;">
+                    <div class="d-flex flex-column" id="groupItemList">
+                        <div class="d-flex shopItem" style="display:none;">
+                            <img class="shopItem_img">
+                            <div class="d-flex flex-column flex-grow-1 shopItem_mid">
+                                <div class="shopItem_name color-normal font-12"></div>
+                                <span class="shopItem_intro color-normal font-10 mb-auto"></span>
+                                <div class="shopItem_price color-normal font-10"></div>
+                            </div>
+                            <div class="d-flex flex-column shopItem_control">
+                                <img class="btn btn-square shopItem_plus" type="button"
+                                    src="./public/images/b1/開始使用部分-48.svg" alt="b1-48">
+                                <img class="btn btn-square shopItem_minus" type="button"
+                                    src="./public/images/b1/開始使用部分-49.svg" alt="b1-49">
+                            </div>
+                            <div class="itemAmount_txt color-blue">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn btn-square on-card" id="shopCard_bottom">
+                    <div class="d-flex flex-column align-items-center justify-content-around"
+                        style="width: 100%; height: 100%;">
+                        <img class="addBtn" id="addItem_btn" src="public/images/b1/開始使用部分-44.svg" alt="b1-44">
+                        <img class="addBtn" id="chooseGroup_btn" src="public/images/b2/團購-11.svg" alt="b2-11"
+                            style="display: none;">
+                        <img class="addBtn disabled" id="raise_btn" src="public/images/b2/團購-23.svg" alt="b2-23"
+                            style="display: none;">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- <div class="container-fluid d-flex justify-content-end layer onMap_mid">
+        <div class="d-flex flex-column mb-4 pb-2 mr-3 pr-1 on-map">
+            <img class="btn btn-square" id="freq_filter" src="public/images/a1/a1-11前常用.svg" alt="a1-11">
+            <img class="btn btn-square" id="like_filter" src="public/images/a1/a1-12前最愛.svg" alt="a1-12">
+            <img class="btn btn-square" id="group_filter" src="public/images/a1/a1-13前團購.svg" alt="a1-13">
+        </div>
+    </div> -->
+    <div class="container-fluid layer onMap_bottom">
+        <div class="on-map" id="infoBox" style="display:none">
+            <div class="d-flex align-items-center" style="min-height: 10vmin;">
+                <div class="d-flex flex-column mr-auto">
+                    <div class="color-normal font-12 mb-1" id="info_t1">成大醫院櫃</div>
+                    <div class="color-normal font-8" id="info_t2">台南市北區小東路35號門診大樓1樓</div>
+                </div>
+                <div class="btn btn-square color-blue font-12" id="goto">確認</div>
+            </div>
+        </div>
+        <div class="d-flex flex-column align-items-end on-map" id="shortcut_box">
+            <img class="btn btn-square on-map shortcut" id="locate" src="public/images/a1/a1-14定位.svg" alt="a1-14"
+                onclick="locate_once()">
+            <img class="btn btn-square shortcut" id="cart_shortcut" src="public/images/b1/登入增加-02.svg" alt="b1-02">
+            <img class="btn btn-square shortcut" id="group_shortcut" src="public/images/b1/登入增加-03.svg" alt="b1-03">
+        </div>
+    </div>
+
+
+
+    <!------------------------------------------- Hamburger ---------------------------------------------->
+    <div class="float_window" id="hamburger">
+        <div class="left_side">
+            <div class="user_name">
+                <span>用戶名稱</span>
+            </div>
+            <!--user_name-->
+            <div class="status">
+                <img src="./public/images/hamburger/小漢堡+個人-07.svg"></img>&emsp;<span>我的訂單狀況</span>
+            </div>
+            <!--status-->
+            <div class="cart">
+                <img src="./public/images/hamburger/小漢堡+個人-08.svg"></img>&emsp;<span>我的購物車</span>
+            </div>
+            <!--cart-->
+            <div class="address">
+                <img src="./public/images/hamburger/小漢堡+個人-09.svg"></img>&emsp;<span>我的地址</span>
+            </div>
+            <!--address-->
+            <div class="pay_way">
+                <img src="./public/images/hamburger/小漢堡+個人-10.svg"></img>&emsp;<span>我的付款方式</span>
+            </div>
+            <!--pay_way-->
+            <div class="recent_event">
+                <img src="./public/images/hamburger/小漢堡+個人-11.svg"></img>&emsp;<span>近期活動</span>
+            </div>
+            <!--recent_event-->
+            <div class="invite">
+                <img src="./public/images/hamburger/小漢堡+個人-12.svg"></img>&emsp;<span>邀請好友</span>
+            </div>
+            <!--invite-->
+            <div class="notification">
+                <img src="./public/images/hamburger/小漢堡+個人-13.svg"></img>&emsp;<span>附近團購通知</span>
+            </div>
+            <!--notification-->
+            <div class="partner">
+                <img src="./public/images/hamburger/小漢堡+個人-14.svg"></img>&emsp;<span>成為合作夥伴</span>
+            </div>
+            <!--partner-->
+            <div class="service_center">
+                <img src="./public/images/hamburger/小漢堡+個人-15.svg"></img>&emsp;<span>客服中心</span>
+            </div>
+            <!--sevice_center-->
+            <div class="log_out">
+                <img src="./public/images/hamburger/小漢堡+個人-16.svg"></img>&emsp;<span>登出</span>
+            </div>
+            <!--log_out-->
+
+        </div>
+        <!--left_side-->
+        <div class="middle">
+            <button type="button" class="photo" onclick="showDetail()" id="showDetail_btn">
+                <img src="./public/images/hamburger/小漢堡+個人-06.svg"></img>
+                <!--大頭貼-->
+
+                <button type="button" class="small_camera">
+                    <img src="./public/images/hamburger/小漢堡+個人-18.svg"></img>
+                    <!--小相機icon-->
+                </button>
+
+                <button type="button" class="arrow-img" id="foldPersonal_btn">
+                    <img src="./public/images/hamburger/小漢堡+個人-04.svg"></img>
+                </button>
+                <!--小箭頭-->
+
+        </div>
+        <!--middle-->
+        <div class="right_side">
+            <div class="user_name">
+                <span>用戶名稱</span>
+            </div>
+            <!--user_name-->
+            <div class="title">
+                <span>稱號:團購高手</span>
+            </div>
+            <!--title-->
+            <div class="phone_number">
+                <span>我的手機:09XX-XXX-XXX</span>
+            </div>
+            <!--phone_number-->
+            <div class="mail">
+                <span>我的信箱:</span>
+            </div>
+            <!--mail-->
+
+            <div class="history">
+                <span>使用紀錄</span>
+            </div>
+            <!--history-->
+            <div class="purchase_count">
+                <span>購買次數</span>&emsp;&emsp;<span class="purchase_num">1</span>
+            </div>
+            <!--purchase_count-->
+            <div class="score_count">
+                <span>評分次數</span>&emsp;&emsp;<span class="score_num">1</span>
+            </div>
+            <!--score_count-->
+            <div class="comment_count">
+                <span>評論次數</span>&emsp;&emsp;<span class="comment_num">1</span>
+            </div>
+            <!--comment_count-->
+            <div class="follow_count">
+                <span>跟團成功次數</span>&emsp;&emsp;<span class="follow_num">1</span>
+            </div>
+            <!--follow_count-->
+            <div class="launch_count">
+                <span>開團成功次數</span>&emsp;&emsp;<span class="launch_num">1</span>
+            </div>
+            <!--launch_count-->
+            <div class="edit">
+                <span> 編輯 </span>
+            </div>
+            <!--edit-->
+        </div>
+        <!--right_side-->
+    </div>
+
+
+
+    <!------------------------------------------------- Shopping-cart ---------------------------------------------------------->
+    <div id="shopping-cart" class="screen">
+        <!-- header -->
+        <div id="shopping-cart-header">
+            <div id="header-title">我的購物車</div>
+            <img class="abs back-arrow" id="back_shop" type="button" src="./src/img/back-arrow.svg">
+            <img class="abs cross" id="cross_cart" type="button" src="./src/img/cross.svg">
+            <div id="blue-space"></div>
+        </div>
+        <!-- content -->
+        <div id="shopping-cart-content" class="overflow-auto">
+            <div class="d-flex flex-column" id="personal-spc-list">
+                <div class="personal-spc">
+                    <div class="personal-spc-header">
+                        <input class="spc-checkbox" type="checkbox" name="c" />
+                        <button class="spc-store-name">店家名稱</button>
+                        <img class="abs to-arrow" src="./src/img/to-arrow-gray.svg">
+                        <button class="spc-station-name">選擇櫃站</button>
+                        <div class="spc-edit"><a class="spc-edit-dark" onclick="SpcEdit(this)">編輯</a></div>
+                    </div>
+                    <div class="spc-item" style="display: none;">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='button' value='-' class='spc-qty-minus' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='spc-qty-number' />
+                            <input type='button' value='+' class='spc-qty-plus' field='quantity' />
+                        </form>
+                        <button class="spc-item-delete">刪除</button>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column" id="group-spc-list">
+                <div class="group-spc">
+                    <div class="group-spc-header">
+                        <input class="spc-checkbox" type="checkbox" name="c" />
+                        <button class="spc-store-name" style="cursor: default;">店家名稱</button>
+                        <img class="abs to-arrow" src="./src/img/to-arrow-white.svg">
+                        <button class="spc-station-name" style="cursor: default;">櫃站名稱</button>
+                        <div class="spc-edit"><a class="spc-edit-light" onclick="SpcEdit(this)">編輯</a></div>
+                    </div>
+                    <div class="spc-item" style="display: none;">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='button' value='-' class='spc-qty-minus' field='quantity' />
+                            <input type='text' name='quantity' value='0' class='spc-qty-number' />
+                            <input type='button' value='+' class='spc-qty-plus' field='quantity' />
+                        </form>
+                        <button class="spc-item-delete">刪除</button>
+                    </div>
+                    <div class="group-spc-footer">
+                        <button class="group-spc-progress" type="button" data-toggle="modal"
+                            data-target="#progressModal">查看進度</button>
+                        <div class="group-spc-deadline" type="button">團購截止時間 2020-07-02 17:00</div>
+                        <button class="group-spc-share">分享</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="on-map shareBox-white" style="display: none;">
+            <div class="d-flex align-items-center justify-content-around" id="shareBox_content">
+                <div class="color-normal font-12 mr-4">分享給好友:&nbsp;</div>
+                <div class="d-flex justify-content-between flex-grow-1" id="appBar">
+                    <img class="btn btn-square appIcon link_btn" src="public/images/b2/團購-18.svg" alt="b2-18">
+                    <a class="line_btn">
+                        <img class="btn btn-square appIcon" src="public/images/b2/團購-19.svg" alt="b2-19">
+                    </a>
+                    <img class="btn btn-square appIcon messenger_btn" src="public/images/b2/團購-20.svg" alt="b2-20">
+                    <img class="btn btn-square appIcon facebook_btn" src="public/images/b2/團購-21.svg" alt="b2-21">
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div id="shopping-cart-footer">
+            <!-- <div id="spc-footer-upper">
+                <input class="spc-footer-checkbox" type="checkbox" onclick="SelectAll(this,'c')" />
+                <div id="spc-select-all">全選</div>
+                <div id="spc-total-price">總計：<a id="spc-total-price-number">150</a>元</div>
+            </div> -->
+            <div id="spc-footer-lower">
+                <button id="spc-order" type="button" onclick="SwitchToCheckout()">確認下單</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!----------------------------------------------------- Checkout ----------------------------------------------------->
+    <div id="check-out" class="screen">
+        <!-- header -->
+        <div id="check-out-header">
+            <div id="header-title">結帳</div>
+            <img class="abs back-arrow" id="back_cart" src="./src/img/back-arrow.svg" type="button"
+                onclick="SwitchToShoppingcart()">
+            <div id="blue-space"></div>
+        </div>
+        <!-- store & items -->
+        <div id="cko-name-block">
+            <p id="cko-store-name">店家名稱</p>
+        </div>
+        <div id="check-out-content" class="overflow-auto">
+            <!-- <div class="spc-item">
+                <img class="spc-item-pic"></img>
+                <div class="spc-item-discribe">
+                    <p class="spc-item-name">商品名稱</p>
+                    <p class="spc-item-option">選項： 微糖 微冰</p>
+                    <p class="spc-item-price">$50</p>
+                </div>
+                <form class="spc-qty" method='POST' action='#'>
+                    <input type='text' name='quantity' value='0' class='spc-qty-number' />
+                </form>
+            </div> -->
+        </div>
+        <!-- locker station  -->
+        <div id="cko-station-block">
+            <div id="cko-station-info">櫃站資訊</div>
+            <button id="cko-station-position" type="button" onclick="OpenMap()">查看位置</button>
+        </div>
+        <div id="cko-station-discribe">
+            <div id="cko-station-name">櫃站名稱：</div>
+            <div id="cko-station-name-value">名稱</div>
+            <div id="cko-station-address">櫃站地址：</div>
+            <div id="cko-station-address-value">地址</div>
+        </div>
+        <!-- payment -->
+        <div id="cko-payment-block">
+            <div id="cko-payment-way">付款方式</div>
+            <button id="cko-payment-choose" type="button" onclick=" OpenPayment()">選擇付款方式</button>
+        </div>
+        <div id="cko-payment-discribe">
+            <div id="cko-total-item">商品總額：</div>
+            <div id="cko-total-item-value">150元</div>
+            <div id="cko-total-fare">運費總額：</div>
+            <div id="cko-total-fare-value">60元</div>
+            <div id="cko-total">總計：</div>
+            <div id="cko-total-value"><a id="cko-total-value-red">210</a>元</div>
+        </div>
+        <!-- footer -->
+        <div id="cko-footer">
+            <button id="cko-order" type="button" onclick="SwitchToOrderlist()">結帳</button>
+        </div>
+    </div>
+
+    <!-- position confirm -->
+    <div id="map-position">
+        <div id="map-position-map"></div>
+        <div id="map-position-footer">
+            <button id="map-position-confirm" type="button" onclick="CloseMap()">確認</button>
+        </div>
+    </div>
+
+    <!-- choose payment -->
+    <div id="choose-payment">
+        <p style="position: absolute; left: 6.1%; top: 8.7%;">付款方式：</p>
+        <button id="choose-payment-cash" class="choose-payment-btn" onclick="PaymentCash()">貨到付款</button>
+        <button id="choose-payment-bank" class="choose-payment-btn" onclick="PaymentBank()">銀行轉帳</button>
+        <button id="choose-payment-card" class="choose-payment-btn" onclick="PaymentCard()">信用卡 / 金融卡</button>
+        <div id="choose-payment-footer">
+            <button id="choose-payment-confirm" type="button" onclick="ClosePayment()">確認</button>
+        </div>
+    </div>
+
+    <!-- item option -->
+    <div id="item-option">
+        <div id="item-option-pic"></div>
+        <p id="item-option-name">商品名稱</p>
+        <p id="item-option-price">$ 50</p>
+        <div id="item-option-option">
+            <p style="position: absolute; left: 9.6%; top: 36.6%;">選項</p>
+            <div id="item-option-ice">冰塊</div>
+            <button id="item-option-ice-10" class="item-option-ice-btn" onclick="Ice10()">正常</button>
+            <button id="item-option-ice-7" class="item-option-ice-btn" onclick="Ice7()">少冰</button>
+            <button id="item-option-ice-3" class="item-option-ice-btn" onclick="Ice3()">微冰</button>
+            <button id="item-option-ice-0" class="item-option-ice-btn" onclick="Ice0()">去冰</button>
+            <div id="item-option-sugar">甜度</div>
+            <button id="item-option-sugar-10" class="item-option-sugar-btn" onclick="Sugar10()">正常</button>
+            <button id="item-option-sugar-5" class="item-option-sugar-btn" onclick="Sugar5()">半糖</button>
+            <button id="item-option-sugar-3" class="item-option-sugar-btn" onclick="Sugar3()">微糖</button>
+            <button id="item-option-sugar-0" class="item-option-sugar-btn" onclick="Sugar0()">無糖</button>
+        </div>
+        <div id="item-option-number">
+            <p style="position: absolute; left: 9.6%; top: 28.6%;">數量</p>
+            <p style="position: absolute; left: 88%; top: 28.6%;">1</p>
+        </div>
+        <div id="item-option-footer">
+            <button id="item-option-confirm" type="button" onclick="CloseOption()">確認</button>
+        </div>
+    </div>
+
+
+    <!------------------------------------------------------- Order-list --------------------------------------------------->
+    <div id="order-list" class="screen">
+        <div id="order-list-header">
+            <div id="header-title">購買清單</div>
+            <img class="abs back-arrow" id="back_checkout" src="./src/img/back-arrow.svg">
+            <img class="abs cross" id="cross_order" src="./src/img/cross.svg">
+            <div id="page-swift">
+                <button type="button" class="page-swift-button" id="ol-grouping-button"
+                    onclick="SwitchToGrouping()">團購中</button>
+                <button type="button" class="page-swift-button" id="ol-undelivered-button"
+                    onclick="SwitchToUndelivered()">未出貨</button>
+                <button type="button" class="page-swift-button" id="ol-arrived-button"
+                    onclick="SwitchToArrived()">已送達</button>
+                <button type="button" class="page-swift-button" id="ol-done-button"
+                    onclick="SwitchToDone()">已完成</button>
+            </div>
+        </div>
+        <!-- grouping page -->
+        <div id="ol-grouping" class="ol-page overflow-auto">
+            <div class="ol-order">
+                <div class="ol-store-header">
+                    <img class="ol-store-img"></img>
+                    <div class="ol-store-name">店家名稱</div>
+                    <div class="ol-station-name">櫃站名稱</div>
+                    <div class="ol-status">團購中</div>
+                    <button class="ol-position" type="button">查看位置</button>
+                </div>
+                <div class="ol-order-detail">
+                    檢視購買商品列表
+                    <img class="ol-detail-arrow abs" src="./src/img/white-arrow.svg" onclick="SeeDetail(this)">
+                </div>
+                <div class="ol-item-list overflow-auto" id="ol-order1">
+                    <!-- <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div> -->
+                </div>
+                <div class="ol-total-price">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">總計金額：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:30.4vw">共計</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:52.8vw">個商品</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:86.9vw">元</p>
+                    <p nowrap class="ol-item-number">3</p>
+                    <p nowrap class="ol-total-price-value">210</p>
+                </div>
+                <div class="ol-payment">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">付款方式：</p>
+                    <div class="ol-payment-value">銀行轉帳</div>
+                    <a class="ol-payment-change">變更</a>
+                </div>
+                <div class="group-spc-footer">
+                    <button class="group-spc-progress" type="button" data-toggle="modal"
+                        data-target="#progressModal">查看進度</button>
+                    <div class="group-spc-deadline" type="button">團購截止時間 2020-07-02 17:00</div>
+                    <button class="group-spc-share">分享</button>
+                </div>
+                <button class="ol-group-cancel">取消團購</button>
+            </div>
+            <div class="on-map shareBox-white" style="display: none;">
+                <div class="d-flex align-items-center justify-content-around" id="shareBox_content">
+                    <div class="color-normal font-12 mr-4">分享給好友:&nbsp;</div>
+                    <div class="d-flex justify-content-between flex-grow-1" id="appBar">
+                        <img class="btn btn-square appIcon link_btn" src="public/images/b2/團購-18.svg" alt="b2-18">
+                        <a cals="line_btn">
+                            <img class="btn btn-square appIcon" src="public/images/b2/團購-19.svg" alt="b2-19">
+                        </a>
+                        <img class="btn btn-square appIcon messenger_btn" src="public/images/b2/團購-20.svg" alt="b2-20">
+                        <img class="btn btn-square appIcon facebook_btn" src="public/images/b2/團購-21.svg" alt="b2-21">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- undelivered page -->
+        <div id="ol-undelivered" class="ol-page overflow-auto">
+            <!-- <div class="ol-order">
+                <div class="ol-store-header">
+                    <div class="<img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06" style="display: none;">"></div>
+                    <div class="ol-store-name">店家名稱</div>
+                    <div class="ol-station-name">櫃站名稱</div>
+                    <div class="ol-status">未出貨</div>
+                    <button class="ol-position" type="button">查看位置</button>
+                </div>
+                <div class="ol-order-detail">
+                    檢視購買商品列表
+                    <img class="ol-detail-arrow abs" src="./src/img/white-arrow.svg" onclick="SeeDetail(this)">
+                </div>
+                <div class="ol-item-list overflow-auto" id="ol-order1">
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                </div>
+                <div class="ol-total-price">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">總計金額：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:30.4vw">共計</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:52.8vw">個商品</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:86.9vw">元</p>
+                    <p nowrap class="ol-item-number">3</p>
+                    <p nowrap class="ol-total-price-value">210</p>
+                </div>
+                <div class="ol-payment">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">付款方式：</p>
+                    <div class="ol-payment-value">銀行轉帳</div>
+                    <a class="ol-payment-change">變更</a>
+                </div>
+                <div class="ol-order-footer">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">預計到貨時間：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; right:8.6vw">2020 - 07 - 02 - 17:00</p>
+                </div>
+            </div>
+            <div class="ol-order">
+                <div class="ol-store-header">
+                    <div class="<img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06" style="display: none;">"></div>
+                    <div class="ol-store-name">店家名稱</div>
+                    <div class="ol-station-name">櫃站名稱</div>
+                    <div class="ol-status">未出貨</div>
+                    <button class="ol-position" type="button">查看位置</button>
+                </div>
+                <div class="ol-order-detail">
+                    檢視購買商品列表
+                    <img class="ol-detail-arrow abs" src="./src/img/white-arrow.svg" onclick="SeeDetail(this)">
+                </div>
+                <div class="ol-item-list overflow-auto" id="ol-order1">
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                </div>
+                <div class="ol-total-price">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">總計金額：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:30.4vw">共計</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:52.8vw">個商品</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:86.9vw">元</p>
+                    <p nowrap class="ol-item-number">3</p>
+                    <p nowrap class="ol-total-price-value">210</p>
+                </div>
+                <div class="ol-payment">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">付款方式：</p>
+                    <div class="ol-payment-value">銀行轉帳</div>
+                    <a class="ol-payment-change">變更</a>
+                </div>
+                <div class="ol-order-footer">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">預計到貨時間：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; right:8.6vw">2020 - 07 - 02 - 17:00</p>
+                </div>
+            </div> -->
+        </div>
+        <!-- arrived page -->
+        <div id="ol-arrived" class="ol-page overflow-auto">
+            <div class="ol-order">
+                <div class="ol-store-header">
+                    <img class="ol-store-img"></img>
+                    <div class="ol-store-name">店家名稱</div>
+                    <div class="ol-station-name">櫃站名稱</div>
+                    <div class="ol-status">已送達</div>
+                    <button class="ol-position" type="button">查看位置</button>
+                </div>
+                <div class="ol-order-detail">
+                    檢視購買商品列表
+                    <img class="ol-detail-arrow abs" src="./src/img/white-arrow.svg" onclick="SeeDetail(this)">
+                </div>
+                <div class="ol-item-list overflow-auto" id="ol-order4">
+                    <!-- <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div> -->
+                </div>
+                <div class="ol-total-price">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">總計金額：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:30.4vw">共計</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:52.8vw">個商品</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:86.9vw">元</p>
+                    <p nowrap class="ol-item-number">3</p>
+                    <p nowrap class="ol-total-price-value">210</p>
+                </div>
+                <div class="ol-payment">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">付款方式：</p>
+                    <div class="ol-payment-value">銀行轉帳</div>
+                    <a class="ol-payment-change">變更</a>
+                </div>
+                <div class="ol-pickup-detail">
+                    檢視取貨資訊
+                    <img class="ol-detail-arrow abs" src="./src/img/black-arrow.svg" onclick="SeeDetailPickup(this)">
+                </div>
+                <div class="ol-pickup-info">
+                    <div class="ol-order-number">
+                        <p nowrap style="position:absolute;top: 23.3%; left:4vw">訂單編號：</p>
+                        <p nowrap style="position:absolute;top: 23.3%; right: 8.8vw">A12345678</p>
+                    </div>
+                    <div class="ol-order-qrcode">
+                        <img class="ol-order-qrcode-img abs" src="./src/img/qr-code.svg">
+                    </div>
+                </div>
+                <div class="ol-order-footer-arrived">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">取貨期限：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; right:8.6vw">2020 - 07 - 02 - 24:00</p>
+                </div>
+            </div>
+        </div>
+        <!-- done page -->
+        <div id="ol-done" class="ol-page overflow-auto">
+            <!-- <div class="ol-order">
+                <div class="ol-store-header">
+                    <div class="ol-store-img"></div>
+                    <div class="ol-store-name">店家名稱</div>
+                    <div class="ol-station-name">櫃站名稱</div>
+                    <div class="ol-status">已完成</div>
+                    <button class="ol-position" type="button">查看位置</button>
+                </div>
+                <div class="ol-order-detail">
+                    檢視購買商品列表
+                    <img class="ol-detail-arrow abs" src="./src/img/white-arrow.svg" onclick="SeeDetail(this)">
+                </div>
+                <div class="ol-item-list overflow-auto" id="ol-order1">
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                    <div class="spc-item">
+                        <img class="spc-item-pic"></img>
+                        <div class="spc-item-discribe">
+                            <p class="spc-item-name">商品名稱</p>
+                            <p class="spc-item-option">選項： 微糖 微冰</p>
+                            <p class="spc-item-price">$50</p>
+                        </div>
+                        <form class="spc-qty" method='POST' action='#'>
+                            <input type='text' name='quantity' value='1' readonly="readonly" class='spc-qty-number' />
+                        </form>
+                    </div>
+                </div>
+                <div class="ol-total-price">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">總計金額：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:30.4vw">共計</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:52.8vw">個商品</p>
+                    <p nowrap style="position:absolute;top: 23.3%; left:86.9vw">元</p>
+                    <p nowrap class="ol-item-number">3</p>
+                    <p nowrap class="ol-total-price-value">210</p>
+                </div>
+                <div class="ol-payment">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">付款方式：</p>
+                    <div class="ol-payment-value">銀行轉帳</div>
+                    <a class="ol-payment-change">變更</a>
+                </div>
+                <div class="ol-order-footer">
+                    <p nowrap style="position:absolute;top: 23.3%; left:4vw">完成時間：</p>
+                    <p nowrap style="position:absolute;top: 23.3%; right:8.6vw">2020 - 07 - 02 - 18:30</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="progressModal" tabindex="-1" role="dialog" aria-labelledby="progressModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <!-- <div class="d-flex flex-column groupCase" style="border-top: none;">
+                    <div class="d-flex mb-auto groupCase_top">
+                        <div class="d-flex flex-column groupCase_left">
+                            <span class="groupName font-12 color-normal">五告歡樂小確幸</span>
+                            <div style="line-height: 1.2rem;">
+                                <span class="font-10 color-normal">集滿</span>
+                                <span class="target font-10 color-normal">5</span>
+                                <span class="font-10 color-normal">份即享免運費</span>
+                            </div>
+                            <div style="line-height: 1.2rem;">
+                                <span class="font-10 color-orange">每份折價&nbsp;</span>
+                                <span class="discount font-10 color-orange">5</span>
+                                <span class="font-10 color-orange">&nbsp;元</span>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column ml-auto groupCase_right" style="text-align: right;">
+                            <span class="groupLocker font-12 color-blue">成大長榮櫃&nbsp;-&nbsp;01</span>
+                            <span class="groupDeadline font-10 color-normal">2020-07-02-16:00</span>
+                            <span class="groupAddr font-10 color-normal">台南市東區長榮路三段139號</span>
+                        </div>
+                    </div>
+                    <div class="groupCase_bottom">
+                        <img class="progressLine" src="public/images/b2/團購-07.svg" alt="b2-07">
+                        <div class="d-flex justify-content-around align-items-center progressPeople">
+                            <div class="people">
+                                <img class="circle big" src="public/images/b2/團購-04.svg" alt="b2-04">
+                                <img class="peoplePhoto big" src="public/images/b2/團購-03.svg" alt="b2-03">
+                            </div>
+                            <div class="people">
+                                <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                            </div>
+                            <div class="people">
+                                <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                            </div>
+                            <div class="people">
+                                <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                            </div>
+                            <div class="people">
+                                <img class="circle small" src="public/images/b2/團購-05.svg" alf="b2-05">
+                                <img class="peoplePhoto small" src="public/images/b2/團購-06.svg" alt="b2-06">
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModal_btn">
+                <img src="public/images/a5/a5-08.svg"></img>
+            </button>
+        </div>
+
+        <div w3-include-html="order_extra.html"></div>
+        <div w3-include-html="shopping_cart_extra.html"></div>
+
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WQssz_5EAQLX-Xc1HwuZ1p-wJV7ubwk&language=zh-TW&region=TW&libraries=places"></script>
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <script>w3.includeHTML();</script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>
+        <script src="./app.js"></script>
+        <script src="./personal.js"></script>
+        <script src='./shopping-cart.js'></script>
+        <script src="./order-list.js"></script>
+</body>
+
+</html>

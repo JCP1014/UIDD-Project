@@ -1,0 +1,100 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<title>LockerStore</title>
+	<link rel="Shortcut Icon" type="image/x-icon" href="./public/images/about_us/part5/part5-logo.svg" />
+	<link rel="apple-touch-icon" sizes="57x57" href="./public/images/icons/iOS/apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="./public/images/icons/iOS/apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon" sizes="76x76" href="./public/images/icons/iOS/apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="./public/images/icons/iOS/apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon" sizes="120x120" href="./public/images/icons/iOS/apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon" sizes="144x144" href="./public/images/icons/iOS/apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon" sizes="152x152" href="./public/images/icons/iOS/apple-touch-icon-152x152.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="./public/images/icons/iOS/apple-touch-icon-180x180.png" />
+	<link rel="manifest" href="./manifest.json">
+	<script src="./public/stylesheets/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="./index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div class="view"
+		style="background-image: url('public/images/00/00-12.svg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+		<div class="container-fluid">
+			<div id="map-canvas"></div>
+			<div class="container-fluid" id="onMap_top">
+				<div class="d-flex mt-2 pt-1 ml-3 mr-4 pr-1 ">
+					<div class="mr-auto" id="searchBox">
+						<a href="">
+							<img id="menu_btn" src="public/images/a1/a1-04.svg" alt="a1-04">
+						</a>
+						<input type="search" id="keywordBlank" name="keyword" placeholder="">
+						<a href="">
+							<img id="search_btn" src="public/images/a1/a1-02.svg" alt="a1-02">
+						</a>
+					</div>
+					<a href="">
+						<img id="square" src="public/images/a1/a1-09.svg" alt="a1-09">
+					</a>
+					<a href="./login.html">
+						<img id="sign_onMap" src="public/images/a1/a1-10.svg" alt="a1-10">
+					</a>
+				</div>
+			</div>
+			<div class="container-fluid d-flex justify-content-end" id="onMap_bottom">
+				<div class="d-flex flex-column mb-4 pb-2 mr-3 pr-1">
+					<a href="">
+						<img id="locate" src="public/images/a1/a1-14定位.svg" alt="a1-14">
+					</a>
+					<div class="mt-1" id="zoom">
+						<img id="zoom_rec" src="public/images/a1/a1-15.svg" alt="a1-15">
+						<a href="">
+							<img id="zoom_in" src="public/images/a1/a1-24前.svg" alt="a1-24">
+						</a>
+						<a href="">
+							<img id="zoom_out" src="public/images/a1/a1-25前.svg" alt="a1-25">
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid" id="front">
+				<div class="d-flex justify-content-end mt-3 ml-3 mr-4 pr-1">
+					<a href="./sign_up.html">
+						<img id="sign_front" src="public/images/00/00-04.svg" alt="00-04">
+					</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<img id="logo" src="public/images/00/00-08.svg" alt="00-08">
+				</div>
+				<div class="d-flex justify-content-center mt-5 pt-2">
+					<img id="slogan" src="public/images/00/00-07.svg" alt="00-07">
+				</div>
+				<div class="d-flex mt-5 pt-4">
+					<form action="./app.html" method="get" id="searchBar">
+						<input type="image" id="loc_icon" name="locate_btn"
+							src="./public/images/about_us/part1/location-icon-small.svg" alt="location-icon-small">
+						<input type="text" id="addressBlank" name="address" placeholder="Enter your delivery address">
+						<input type="image" id="find_btn" src="./public/images/about_us/part1/find.svg" alt="find">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7WQssz_5EAQLX-Xc1HwuZ1p-wJV7ubwk&language=zh-TW&region=TW&libraries=places"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+		crossorigin="anonymous"></script>
+	<script src="./index.js"></script>
+</body>
+
+</html>

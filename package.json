@@ -1,0 +1,26 @@
+{
+  "name": "justinfat.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/justinfat/justinfat.github.io.git",
+  "author": "JCP1014 <believe861014@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@types/jquery": "^3.3.35",
+    "express": "^4.17.1",
+    "jquery": "^3.5.0",
+    "mongodb": "^3.5.8",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "mongoose": "^5.9.20",
+    "node-sass": "^4.13.1",
+    "parcel-bundler": "^1.12.4",
+    "pug": "^2.0.4",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.26.3",
+    "superagent": "^5.3.1",
+    "typescript": "^3.8.3"
+  }
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1" name="viewport">
+		<title>LockerStore</title>
+		<link href="./index.css" rel="stylesheet" type="text/css">
+		<link href="./section.css" rel="stylesheet" type="text/css">
+		<link href="./contact_us.css" rel="stylesheet" type="text/css">
+		<link href="./our_team.css" rel="stylesheet" type="text/css">
+		<link href="./animation.css" rel="stylesheet" type="text/css">
+		<link href="./what_we_do.css" rel="stylesheet" type="text/css">
+		<link href="./our_approach.css" rel="stylesheet" type="text/css">
+		<script src="./public/stylesheets/jquery-3.4.1.min.js"></script>
+		<!--<script src="./ourteam.js"></script>-->
+		<script src="./index.js"></script>
+		<link rel="Shortcut Icon" type="image/x-icon" href="./public/images/about_us/part5/part5-logo.svg"/>  <!--網頁標題的icon-->
+	</head>
+
+	<body>
+		<!---------------------Top page---------------------->
+		<div>
+			<header class="header">
+				<!---------------------Upper left logo---------------------->
+				<a href="./index.html">
+					<img class="logo" src="./public/images/about_us/part1/logo+typo.svg" alt="logo+typo">
+				</a>
+				<!---------------------Top navigation bar---------------------->
+				<nav class="main_nav">
+					<ul class="menu">
+						<li><a class="btn" href="#What_we_do">What we do</a></li>
+						<li><a class="btn" href="#Our_approach">Our approach</a></li>
+						<li><a class="btn" href="#Who_we_are">Who we are</a></li>
+						<li><a class="btn" href="#Contact_us">Contact us</a></li>
+					</ul>
+				</nav>
+				<!---------------------Upper right sign up---------------------->
+				<a href="./sign_up.html">
+					<img class="sign_btn" src="./public/images/about_us/part1/sign-up.svg" alt="sign-up">
+				</a>
+			</header>
+			<!---------------------Middle content---------------------->
+			<div class="home" id="home">
+				<img class="image" src="./public/images/about_us/part1/background-no-word.svg" alt="background-no-word">
+				<img class="image slogan_init" id="slogan" src="./public/images/about_us/part1/background-only-word.svg" alt="background-only-word.svg">
+				<form action="./test_map.html" method="get" id="search_bar">
+					<input type="image" id="loc_icon" name="locate_btn" src="./public/images/about_us/part1/location-icon-small.svg" alt="location-icon-small">
+					<input type="search" id="addressBlank" name="address" placeholder="Enter delivery address">
+					<input type="image" id="find_btn" src="./public/images/about_us/part1/find.svg" alt="find">
+				</form>
+			</div>
+		</div>
+
+		<!---------------------What we do---------------------->
+		<section id="What_we_do">
+			<div>
+				<img class="part" src="public/images/about_us/part2/part2-all-pic.svg" alt="part2-all-pic">
+			</div>
+			<div id="part3">
+				<img class="part" src="public/images/about_us/mid-pic/MID-pic-no-word.svg" alt="MID-pic-no-word">
+				<img class="dialog" id="d1" src="public/images/about_us/mid-pic/MID-pic-word01.svg" alt="MID-pic-word01">
+				<img class="dialog" id="d2" src="public/images/about_us/mid-pic/MID-pic-word02.svg" alt="MID-pic-word02">
+				<img class="dialog" id="d3" src="public/images/about_us/mid-pic/MID-pic-word03.svg" alt="MID-pic-word03">
+				<img class="dialog" id="d4" src="public/images/about_us/mid-pic/MID-pic-word04.svg" alt="MID-pic-word04">
+				<img class="dialog" id="d5" src="public/images/about_us/mid-pic/MID-pic-word05.svg" alt="MID-pic-word05">
+				<img class="dialog" id="d6" src="public/images/about_us/mid-pic/MID-pic-word06.svg" alt="MID-pic-word06">
+			</div>
+		</section>
+		<!---------------------Our approach---------------------->
+		<section id="Our_approach">
+			<div>
+				<img class="part" src="public/images/about_us/part4/part4-all-pic.svg" alt="part4-all-pic">
+			</div>
+			<div id="part5">
+				<img class="part" src="public/images/about_us/part5/part5-pic-only-mid.svg" alt="part5-pic-only-mid">
+				<img id="logo_1" src="public/images/about_us/part5/blue-a.svg" alt="blue-a">
+				<img id="logo_2" src="public/images/about_us/part5/blue-b.svg" alt="blue-b">
+				<img id="logo_4" src="public/images/about_us/part5/yelloe-b.svg" alt="yellow-b">
+				<img id="logo_3" src="public/images/about_us/part5/yellow-a.svg" alt="yellow-a">
+			</div>
+		</section>
+		<!---------------------Who we are---------------------->
+		<section id="Who_we_are">
+			<div>
+				<img class="part" src="public/images/about_us/part6/part6-all-pic-1280-210px.svg" alt="part6-all-pic">
+			</div>
+			<div class="grid-container">
+				<div class="grid-item" onclick="on_all()" onmouseover="on_all()" onmouseout="out_all()">
+					<img class="ab_us" src="public/images/about_us/our-team-undone/our-team-logo.svg" alt="our-team-logo">
+				</div>
+				<div class="grid-item">
+					<img class="ab_us" src="public/images/about_us/our-team-undone/our-team-yellow.svg" alt="our-team-yellow">
+				</div>
+				<div class="grid-item" id="item3_1" onclick="on_a()" onmouseover="on_a()" onmouseout="out_a()">
+					<img class="ab_us" id="cover_a" src="./public/images/about_us/our-team-undone/under_cover/undercover_wei_07.png">
+				</div>
+				<div class="grid-item" id="item3_2">
+					<img class="ab_us" id="pic_a" src="./public/images/about_us/our-team-undone/no_cover/svg_file/nocover_wei.svg" alt="nocover_wei">
+				</div>
+				<div class="grid-item" id="item4_1">
+					<h3 class = "Name_a text" id="name_a">許&nbsp;&nbsp;&nbsp;峻瑋&emsp;&emsp;(ˉ&ˉ)</h3>
+                    <div class="intro_a text" id="intro_a">我是組長。<br><br><br>單身。</div>
+				</div>
+				<div class="grid-item" id="item4_2">
+					<img class = "ab_us" src="public/images/about_us/our-team-undone/yellow-square.svg" alt="yellow-square">
+				</div>
+				<div class="grid-item" id="item5_1">
+					<h3 class = "Name_b text" id="name_b">李&nbsp;&nbsp;&nbsp;&nbsp;昀&emsp;&emsp;&emsp;{&nbsp;&nbsp;*＆*&nbsp;&nbsp;}</h3>
+					<div class="intro_b text" id="intro_b">喜歡游泳<br>但很久沒游了<br>喜歡桌遊<br>但手邊只有一副狼人殺卡牌<br>喜歡美食<br>但身材沒有本錢吃</div>
+				</div>
+				<div class="grid-item" id="item5_2">
+					<img class = "ab_us" src="public/images/about_us/our-team-undone/blue-square.svg" alt="blue-square">
+				</div>
+				<div class="grid-item" id="item6_1" onclick="on_b()" onmouseover="on_b()" onmouseout="out_b()">
+					<img class="ab_us" id="cover_b" src="./public/images/about_us/our-team-undone/under_cover/undercover_yun_03.png">
+				</div>
+				<div class="grid-item" id="item6_2">
+					<img class = "ab_us" id="pic_b" src="public/images/about_us/our-team-undone/no_cover/svg_file/nocover_yun.svg" alt="nocover_yun">
+				</div>
+				<div class="grid-item" id="item7_1">
+					<h3 class = "Name_b text" id="name_c">簡&nbsp;&nbsp;&nbsp;丞珮&emsp;&emsp;｛&nbsp;＞/＜&nbsp;}</h3>
+					<div class="intro_b text" id="intro_c">雖然是資訊系<br>但是是第一次開發網頁<br>也是第一次跟設計師合作<br>有美美的圖可以用真是太好了＞＜</div>
+				</div>
+				<div class="grid-item" id="item7_2">
+					<img class = "ab_us" src="public/images/about_us/our-team-undone/blue-square.svg" alt="blue-square">
+				</div>
+				<div class="grid-item" id="item8_1" onclick="on_c()" onmouseover="on_c()" onmouseout="out_c()">
+					<img class="ab_us" id="cover_c" src="./public/images/about_us/our-team-undone/under_cover/undercover_pei_06.png">
+				</div>
+				<div class="grid-item" id="item8_2">
+					<img class = "ab_us" id="pic_c" src="public/images/about_us/our-team-undone/no_cover/svg_file/nocover_pei.svg" alt="nocover_pei">
+				</div>
+				<div class="grid-item" id="item9_1" onclick="on_d()" onmouseover="on_d()" onmouseout="out_d()">
+					<img class = "ab_us" id="cover_d" src="./public/images/about_us/our-team-undone/under_cover/undercover_jay_05.png">
+				</div>
+				<div class="grid-item" id="item9_2">
+					<img class = "ab_us" id="pic_d" src="public/images/about_us/our-team-undone/no_cover/svg_file/nocover_jay.svg" alt="nocover_jay">
+				</div>
+				<div class="grid-item" id="item10_1">
+					<h3 class = "Name_a text" id="name_d">吳&nbsp;&nbsp;&nbsp;岱桀&emsp;&emsp;{&nbsp;&nbsp;# /＜&nbsp;&nbsp;}</h3>
+                    <div class="intro_a text" id="intro_d">熱愛各式電影與音樂<br>但說到底戶外山林才是我的歸屬</div>
+				</div>
+				<div class="grid-item" id="item10_2">
+					<img class = "ab_us" src="public/images/about_us/our-team-undone/yellow-square.svg" alt="yellow-square">
+				</div>
+				<div class="grid-item" id="item11_1" onclick="on_e()" onmouseover="on_e()" onmouseout="out_e()">
+					<img class = "ab_us" id="cover_e" src="./public/images/about_us/our-team-undone/under_cover/undercover_zong_04.png">
+				</div>
+				<div class="grid-item" id="item11_2">
+					<img class = "ab_us" id="pic_e" src="public/images/about_us/our-team-undone/no_cover/svg_file/nocover_zong.svg" alt="nocover_zong">
+				</div>
+				<div class="grid-item" id="item12_1">
+					<h3 class = "Name_a text" id="name_e">陳&nbsp;&nbsp;&nbsp;信榕&emsp;&emsp;[&nbsp;&nbsp;+"+&nbsp;&nbsp;]</h3>
+                    <div class="intro_a text" id="intro_e">會寫程式真的太猛了<br>完全看不懂<br>這學期就麻煩各位大大多多指教了 :)</div>
+				</div>
+				<div class="grid-item" id="item12_2">
+					<img class = "ab_us" src="public/images/about_us/our-team-undone/yellow-square.svg" alt="yellow-square">
+				</div>
+			</div>		
+		</section>
+		<!---------------------Contact us----------------------->
+		<section id="Contact_us">
+			<div id="part7">
+				<img class="part" src="public/images/about_us/part7/part7-background.svg" alt="part7-background">
+				<img id="info_left" src="public/images/about_us/part7/get-in-touch.svg" alt="get-in-touch">
+				<img id="info_right" src="public/images/about_us/part7/Follow us.svg" alt="follow us">
+				<div class="blog">
+					<a href="">
+						<img class="icon" src="public/images/about_us/part7/google+.svg" alt="google+">
+					</a>
+					<a href="https://www.instagram.com/uidd_lockerstore/" target="_blank">
+						<img class="icon" src="public/images/about_us/part7/IG.svg" alt="ig">
+					</a>
+					<a href="https://www.facebook.com/Uidd_LockerStore-110386727291098" target="_blank">
+						<img class="icon" src="public/images/about_us/part7/FB.svg" alt="fb">
+					</a>
+				</div>
+			</div>
+		</section>
+		<!---------------------Bottom button----------------------->
+		<footer>
+			<img class="back_btn" src="public/images/about_us/part8/back-to-top.svg" alt="back-to-top">
+		</footer>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+		<script src='./index.js'></script>
+		<script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+
+	</body>
+</html>
+

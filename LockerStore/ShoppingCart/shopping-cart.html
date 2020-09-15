@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+  <head>
+    
+    <link rel="stylesheet" href="./shopping-cart.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Step 2 code here-->
+    <!-- for iOS -->
+    <link rel="apple-touch-icon" sizes="144x144" href="./src/VOCA-144x144.png"/>
+    <link rel="manifest" href="./manifest.json">
+    <title>LockerStore LOGO</title>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <!-- shopping cart -->
+    <div id="shopping-cart" class="screen">
+        <!-- header -->
+        <div id="shopping-cart-header">
+          <div id="header-title">我的購物車</div>
+          <img id="back-arrow" src="./src/img/back-arrow.svg">
+          <img id="cross" src="./src/img/cross.svg">            
+          <div id="blue-space"></div>
+        </div>
+        <!-- content -->
+        <div id="shopping-cart-content" class="overflow-auto">
+            <div class="personal-spc">
+                <div class="personal-spc-header">
+                    <input class="spc-checkbox" type="checkbox" name="c"/>
+                    <button class="spc-store-name">店家名稱</button>
+                    <img class="to-arrow" src="./src/img/to-arrow-gray.svg">
+                    <button class="spc-station-name">櫃站名稱</button>
+                    <div class="spc-edit"><a class="spc-edit-dark" onclick="SpcEdit(this)">編輯</a></div>
+                </div>
+                <div class="spc-item" >
+                    <div class="spc-item-pic"></div>
+                    <div class="spc-item-discribe">
+                      <p class="spc-item-name">商品名稱</p>
+                      <p class="spc-item-option">選項： 微糖  微冰</p>
+                      <p class="spc-item-price">$50</p>
+                    </div>
+                    <form class="spc-qty" method='POST' action='#'>
+                      <input type='button' value='-' class='spc-qty-minus' field='quantity'/>
+                      <input type='text' name='quantity' value='0' class='spc-qty-number'/>
+                      <input type='button' value='+' class='spc-qty-plus' field='quantity'/>
+                    </form>
+                    <button class="spc-item-delete" >刪除</button>
+                </div>
+                <div class="spc-item" >
+                  <div class="spc-item-pic"></div>
+                  <div class="spc-item-discribe">
+                    <p class="spc-item-name">商品名稱</p>
+                    <p class="spc-item-option">選項： 微糖  微冰</p>
+                    <p class="spc-item-price">$50</p>
+                  </div>
+                  <form class="spc-qty" method='POST' action='#'>
+                    <input type='button' value='-' class='spc-qty-minus' field='quantity'/>
+                    <input type='text' name='quantity' value='0' class='spc-qty-number'/>
+                    <input type='button' value='+' class='spc-qty-plus' field='quantity'/>
+                  </form>
+                  <button class="spc-item-delete" >刪除</button>
+                </div>
+                <div class="spc-item" >
+                  <div class="spc-item-pic"></div>
+                  <div class="spc-item-discribe">
+                    <p class="spc-item-name">商品名稱</p>
+                   <p class="spc-item-option">選項： 微糖  微冰</p>
+                   <p class="spc-item-price">$50</p>
+                  </div>
+                  <form class="spc-qty" method='POST' action='#'>
+                    <input type='button' value='-' class='spc-qty-minus' field='quantity'/>
+                   <input type='text' name='quantity' value='0' class='spc-qty-number'/>
+                   <input type='button' value='+' class='spc-qty-plus' field='quantity'/>
+                  </form>
+                  <button class="spc-item-delete" >刪除</button>
+                </div>
+            </div>
+
+            <div class="group-spc">
+              <div class="group-spc-header">
+                  <input class="spc-checkbox" type="checkbox" name="c"/>
+                  <button class="spc-store-name">店家名稱</button>
+                  <img class="to-arrow" src="./src/img/to-arrow-white.svg">
+                  <button class="spc-station-name">櫃站名稱</button>
+                  <div class="spc-edit"><a class="spc-edit-light" onclick="SpcEdit(this)">編輯</a></div>
+              </div>
+              <div class="spc-item" >
+                  <div class="spc-item-pic"></div>
+                  <div class="spc-item-discribe">
+                    <p class="spc-item-name">商品名稱</p>
+                    <p class="spc-item-option">選項： 微糖  微冰</p>
+                    <p class="spc-item-price">$50</p>
+                  </div>
+                  <form class="spc-qty" method='POST' action='#'>
+                    <input type='button' value='-' class='spc-qty-minus' field='quantity'/>
+                    <input type='text' name='quantity' value='0' class='spc-qty-number'/>
+                    <input type='button' value='+' class='spc-qty-plus' field='quantity'/>
+                  </form>
+                  <button class="spc-item-delete" >刪除</button>
+              </div>
+              <div class="spc-item" >
+                <div class="spc-item-pic"></div>
+                <div class="spc-item-discribe">
+                  <p class="spc-item-name">商品名稱</p>
+                  <p class="spc-item-option">選項： 微糖  微冰</p>
+                  <p class="spc-item-price">$50</p>
+                </div>
+                <form class="spc-qty" method='POST' action='#'>
+                  <input type='button' value='-' class='spc-qty-minus' field='quantity'/>
+                  <input type='text' name='quantity' value='0' class='spc-qty-number'/>
+                  <input type='button' value='+' class='spc-qty-plus' field='quantity'/>
+                </form>
+                <button class="spc-item-delete" >刪除</button>
+              </div>
+              <div class="spc-item" >
+                <div class="spc-item-pic"></div>
+                <div class="spc-item-discribe">
+                  <p class="spc-item-name">商品名稱</p>
+                 <p class="spc-item-option">選項： 微糖  微冰</p>
+                 <p class="spc-item-price">$50</p>
+                </div>
+                <form class="spc-qty" method='POST' action='#'>
+                  <input type='button' value='-' class='spc-qty-minus' field='quantity'/>
+                 <input type='text' name='quantity' value='0' class='spc-qty-number'/>
+                 <input type='button' value='+' class='spc-qty-plus' field='quantity'/>
+                </form>
+                <button class="spc-item-delete" >刪除</button>
+              </div>
+              <div class="group-spc-footer">
+                  <button class="group-spc-progress" type="button">查看進度</button>
+                  <div class="group-spc-deadline" type="button">團購截止時間 2020-07-02 17:00</div>
+                  <button class="group-spc-share" onclick="GroupShare()">分享</button>
+              </div>
+            </div>
+
+        </div>
+        <!-- footer -->
+        <div id="shopping-cart-footer">
+          <div id="spc-footer-upper">
+            <input class="spc-footer-checkbox" type="checkbox" onclick="SelectAll(this,'c')"/>
+            <div id="spc-select-all">全選</div>
+            <div id="spc-total-price">總計：<a id="spc-total-price-number">150</a>元</div>
+          </div>
+          <div id="spc-footer-lower">
+            <button id="spc-order" type="button" onclick="SwitchToCheckout()" >確認下單</button>
+          </div>
+        </div>
+    </div>
+
+    <!-- checkout -->
+    <div id="check-out" class="screen">
+      <!-- header -->
+      <div id="check-out-header">
+        <div id="header-title">結帳</div>
+        <img id="back-arrow" src="./src/img/back-arrow.svg" type="button" onclick="SwitchToShoppingcart()">
+        <div id="blue-space"></div>
+      </div>
+      <!-- store & items -->
+      <div id="cko-name-block"><p id="cko-store-name">店家名稱</p></div>
+      <div id="check-out-content" class="overflow-auto">
+        <div class="spc-item" >
+          <div class="spc-item-pic"></div>
+          <div class="spc-item-discribe">
+            <p class="spc-item-name">商品名稱</p>
+            <p class="spc-item-option">選項： 微糖  微冰</p>
+            <p class="spc-item-price">$50</p>
+          </div>
+          <form class="spc-qty" method='POST' action='#'>
+            <input type='text' name='quantity' value='0' readonly="readonly" class='spc-qty-number'/>
+          </form>
+        </div>
+        <div class="spc-item" >
+          <div class="spc-item-pic"></div>
+          <div class="spc-item-discribe">
+            <p class="spc-item-name">商品名稱</p>
+            <p class="spc-item-option">選項： 微糖  微冰</p>
+            <p class="spc-item-price">$50</p>
+          </div>
+          <form class="spc-qty" method='POST' action='#'>
+            <input type='text' name='quantity' value='0' readonly="readonly" class='spc-qty-number'/>
+          </form>
+        </div>
+        <div class="spc-item" >
+          <div class="spc-item-pic"></div>
+          <div class="spc-item-discribe">
+            <p class="spc-item-name">商品名稱</p>
+            <p class="spc-item-option">選項： 微糖  微冰</p>
+            <p class="spc-item-price">$50</p>
+          </div>
+          <form class="spc-qty" method='POST' action='#'>
+            <input type='text' name='quantity' value='0' readonly="readonly" class='spc-qty-number'/>
+          </form>
+        </div>
+        <div class="spc-item" >
+          <div class="spc-item-pic"></div>
+          <div class="spc-item-discribe">
+            <p class="spc-item-name">商品名稱</p>
+            <p class="spc-item-option">選項： 微糖  微冰</p>
+            <p class="spc-item-price">$50</p>
+          </div>
+          <form class="spc-qty" method='POST' action='#'>
+            <input type='text' name='quantity' value='0' readonly="readonly" class='spc-qty-number'/>
+          </form>
+        </div>
+      </div>
+      <!-- locker station  -->
+      <div id="cko-station-block">
+        <div id="cko-station-info">櫃站資訊</div>
+        <button id="cko-station-position" type="button" onclick="OpenMap()">查看位置</button>
+      </div>
+      <div id="cko-station-discribe">
+        <div id="cko-station-name">櫃站名稱：</div>
+        <div id="cko-station-name-value">名稱</div>
+        <div id="cko-station-address">櫃站地址：</div>
+        <div id="cko-station-address-value">地址</div>
+        <div id="cko-arrive-time">到貨時間：</div>
+        <div id="cko-arrive-time-value">時間</div>
+      </div>
+      <!-- payment -->
+      <div id="cko-payment-block">
+        <div id="cko-payment-way">付款方式</div>
+        <button id="cko-payment-choose" type="button" onclick=" OpenPayment()">選擇付款方式</button>
+      </div>
+      <div id="cko-payment-discribe">
+        <div id="cko-total-item">商品總額：</div>
+        <div id="cko-total-item-value">150元</div>
+        <div id="cko-total-fare">運費總額：</div>
+        <div id="cko-total-fare-value">60元</div>
+        <div id="cko-total">總計：</div>
+        <div id="cko-total-value"><a id="cko-total-value-red">210</a>元</div>
+      </div>
+      <!-- footer -->
+      <div id="cko-footer">
+        <button id="cko-order" type="button" onclick="SwitchToCheckout()" >結帳</button>
+      </div>  
+    </div>
+
+    <!-- group share -->
+    <div id="group-share">
+      <p nowrap style="position: absolute;left: 6.7%;top: 36.7%">分享給好友：</p>
+      <img id="share-link" src="./src/img/share-link.svg">
+      <img id="share-line" src="./src/img/share-line.svg">
+      <img id="share-ms" src="./src/img/share-ms.svg">
+      <img id="share-fb" src="./src/img/share-fb.svg">
+    </div>
+
+    <!-- position confirm -->
+    <div id="map-position">
+      <div id="map-position-map"></div>
+      <div id="map-position-footer">
+        <button id="map-position-confirm" type="button" onclick="CloseMap()">確認</button>
+      </div>
+    </div>
+
+    <!-- choose payment -->
+    <div id="choose-payment">
+      <p style="position: absolute; left: 6.1%; top: 8.7%;">付款方式：</p>
+      <button id="choose-payment-cash" class="choose-payment-btn" onclick="PaymentCash()">貨到付款</button>
+      <button id="choose-payment-bank" class="choose-payment-btn" onclick="PaymentBank()">銀行轉帳</button>
+      <button id="choose-payment-card" class="choose-payment-btn" onclick="PaymentCard()">信用卡 / 金融卡</button>
+      <div id="choose-payment-footer">
+        <button id="choose-payment-confirm" type="button" onclick="ClosePayment()">確認</button>
+      </div>
+    </div>
+
+    <!-- item option -->
+    <div id="item-option">
+      <div id="item-option-pic"></div>
+      <p id="item-option-name">商品名稱</p>
+      <p id="item-option-price">$ 50</p>
+      <div id="item-option-option">
+        <p style="position: absolute; left: 9.6%; top: 36.6%;">選項</p>
+        <div id="item-option-ice">冰塊</div>
+        <button id="item-option-ice-10" class="item-option-ice-btn" onclick="Ice10()">正常</button>
+        <button id="item-option-ice-7" class="item-option-ice-btn" onclick="Ice7()">少冰</button>
+        <button id="item-option-ice-3" class="item-option-ice-btn" onclick="Ice3()">微冰</button>
+        <button id="item-option-ice-0" class="item-option-ice-btn" onclick="Ice0()">去冰</button>
+        <div id="item-option-sugar">甜度</div>
+        <button id="item-option-sugar-10" class="item-option-sugar-btn" onclick="Sugar10()">正常</button>
+        <button id="item-option-sugar-5" class="item-option-sugar-btn" onclick="Sugar5()">半糖</button>
+        <button id="item-option-sugar-3" class="item-option-sugar-btn" onclick="Sugar3()">微糖</button>
+        <button id="item-option-sugar-0" class="item-option-sugar-btn" onclick="Sugar0()">無糖</button>
+      </div>
+      <div id="item-option-number">
+        <p style="position: absolute; left: 9.6%; top: 28.6%;">數量</p>
+        <p style="position: absolute; left: 88%; top: 28.6%;">1</p>
+      </div>
+      <div id="item-option-footer">
+        <button id="item-option-confirm" type="button" onclick="CloseOption()">確認</button>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="./shopping-cart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

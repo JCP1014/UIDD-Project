@@ -1,0 +1,134 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(content="width=device-width, initial-scale=1", name="viewport")
+        title LockerStore
+        link(rel="Shortcut Icon", type="image/x-icon", href="./public/images/about_us/part5/part5-logo.svg")
+        link(href="./index.css", rel="stylesheet", type="text/css")
+        link(href="./section.css", rel="stylesheet", type="text/css")
+        link(href="./contact_us.css", rel="stylesheet", type="text/css")
+        link(href="./our_team.css", rel="stylesheet", type="text/css")
+        link(href="./animation.css", rel="stylesheet", type="text/css")
+        link(href="./what_we_do.css", rel="stylesheet", type="text/css")
+        link(href="./our_approach.css", rel="stylesheet", type="text/css")
+        script(src="./public/stylesheets/jquery-3.4.1.min.js")
+    body
+        // ---------------------Top page---------------------
+        div
+            header.header
+                // ---------------------Upper left logo---------------------
+                a(href="./index.html"): img.logo(src="./public/images/about_us/part1/logo+typo.svg", alt="logo+typo")
+                // ---------------------Top navigation bar---------------------
+                nav.main_nav
+                    ul.menu
+                        li: a.btn(href="#What_we_do") What we do
+                        li: a.btn(href="#Our_approach") Our approach
+                        li: a.btn(href="#Who_we_are") Who we are
+                        li: a.btn(href="#Contact_us") Contact us
+                // ---------------------Upper right sign up---------------------
+                a(href="./sign_up.html"): img.sign_btn(src="./public/images/about_us/part1/sign-up.svg", alt="sign-up")
+            // ---------------------Middle content---------------------
+            div.home#home
+                img.image(src="./public/images/about_us/part1/background-no-word.svg", alt="background-no-word")
+                img.image#slogan(src="./public/images/about_us/part1/background-only-word.svg", alt="background-only-word.svg")
+                div#search_bar
+                    img.loc_icon(src="./public/images/about_us/part1/location-icon-small.svg", alt="location-icon-small")
+                    input#addressBlank(type="search", placeholder="Enter delivery address")
+                    a(href="#"): img.find_btn(src="./public/images/about_us/part1/find.svg" alt="find")
+        
+        // ---------------------What we do---------------------
+        section#What_we_do
+            div
+                img.part(src="./public/images/about_us/part2/part2-all-pic.svg", alt="part2-all-pic")
+            div#part3
+                img.part(src="./public/images/about_us/mid-pic/MID-pic-no-word.svg", alt="MID-pic-no-word")
+                img.dialog#d1(src="./public/images/about_us/mid-pic/MID-pic-word01.svg", alt="MID-pic-word01")
+                img.dialog#d2(src="./public/images/about_us/mid-pic/MID-pic-word02.svg", alt="MID-pic-word02")
+                img.dialog#d3(src="./public/images/about_us/mid-pic/MID-pic-word03.svg", alt="MID-pic-word03")
+                img.dialog#d4(src="./public/images/about_us/mid-pic/MID-pic-word04.svg", alt="MID-pic-word04")
+                img.dialog#d5(src="./public/images/about_us/mid-pic/MID-pic-word05.svg", alt="MID-pic-word05")
+                img.dialog#d6(src="./public/images/about_us/mid-pic/MID-pic-word06.svg", alt="MID-pic-word06")
+        // ---------------------Our approach---------------------
+        section#Our_approach
+            div
+                img.part(src="./public/images/about_us/part4/part4-all-pic.svg", alt="part4-all-pic")
+            div#part5
+                img.part(src="./public/images/about_us/part5/part5-pic-only-mid.svg", alt="part5-pic-only-mid")
+                img#logo_1(src="./public/images/about_us/part5/blue-a.svg", alt="blue-a")
+                img#logo_2(src="./public/images/about_us/part5/blue-b.svg", alt="blue-b")
+                img#logo_4(src="./public/images/about_us/part5/yelloe-b.svg", alt="yellow-b")
+                img#logo_3(src="./public/images/about_us/part5/yellow-a.svg", alt="yellow-a")
+        section#Who_we_are
+            div
+                img.part(src="./public/images/about_us/part6/part6-all-pic-1280-210px.svg", alt="part6-all-pic")
+            div.grid-container
+                div.grid-item(onclick="on_all()", onmouseover="on_all()", onmouseout="out_all()")
+                    img.ab_us(src="./public/images/about_us/our-team-undone/our-team-logo.svg", alt="our-team-logo")
+                div.grid-item
+                    img.ab_us(src="./public/images/about_us/our-team-undone/our-team-yellow.svg", alt="our-team-yellow")
+                div.grid-item#item3_1(onclick="on_a()", onmouseover="on_a()", onmouseout="out_a()")
+                    img.ab_us#cover_a(src="./public/images/about_us/our-team-undone/under_cover/undercover_wei_07.png")
+                div.grid-item#item3_2
+                    img.ab_us#pic_a(src="./public/images/about_us/our-team-undone/no_cover/svg_file/nocover_wei.svg", alt="nocover_wei")
+                div.grid-item#item4_1
+                    h3.Name_a.text#name_a 許&nbsp;&nbsp;&nbsp;峻瑋&emsp;&emsp;(ˉ&ˉ)
+                    div.intro_a.text#intro_a 我是組長。<br><br><br>單身。
+                div.grid-item#item4_2
+                    img.ab_us(src="./public/images/about_us/our-team-undone/yellow-square.svg", alt="yellow-square")
+                div.grid-item#item5_1
+                    h3.Name_b.text#name_b 李&nbsp;&nbsp;&nbsp;&nbsp;昀&emsp;&emsp;&emsp;{&nbsp;&nbsp;*＆*&nbsp;&nbsp;}
+                    div.intro_b.text#intro_b 喜歡游泳<br>但很久沒游了<br>喜歡桌遊<br>但手邊只有一副狼人殺卡牌<br>喜歡美食<br>但身材沒有本錢吃
+                div.grid-item#item5_2
+                    img.ab_us(src="./public/images/about_us/our-team-undone/blue-square.svg", alt="blue-square")
+                div.grid-item#item6_1( onclick="on_b()", onmouseover="on_b()", onmouseout="out_b()")
+                    img.ab_us#cover_b(src="./public/images/about_us/our-team-undone/under_cover/undercover_yun_03.png")
+                div.grid-item#item6_2
+                    img.ab_us#pic_b(src="./public/images/about_us/our-team-undone/no_cover/svg_file/nocover_yun.svg", alt="nocover_yun")
+                div.grid-item#item7_1
+                    h3.Name_b.text#name_c 簡&nbsp;&nbsp;&nbsp;丞珮&emsp;&emsp;｛&nbsp;＞/＜&nbsp;}
+                    div.intro_b.text#intro_c 雖然是資訊系<br>但是是第一次開發網頁<br>也是第一次跟設計師合作<br>有美美的圖可以用真是太好了＞＜
+                div.grid-item#item7_2
+                    img.ab_us(src="./public/images/about_us/our-team-undone/blue-square.svg", alt="blue-square")
+                div.grid-item#item8_1(onclick="on_c()", onmouseover="on_c()", onmouseout="out_c()")
+                    img.ab_us#cover_c(src="./public/images/about_us/our-team-undone/under_cover/undercover_pei_06.png")
+                div.grid-item#item8_2
+                    img.ab_us#pic_c(src="./public/images/about_us/our-team-undone/no_cover/svg_file/nocover_pei.svg", alt="nocover_pei")
+                div.grid-item#item9_1(onclick="on_d()", onmouseover="on_d()", onmouseout="out_d()")
+                    img.ab_us#cover_d(src="./public/images/about_us/our-team-undone/under_cover/undercover_jay_05.png")
+                div.grid-item#item9_2
+                    img.ab_us#pic_d(src="./public/images/about_us/our-team-undone/no_cover/svg_file/nocover_jay.svg", alt="nocover_jay")
+                div.grid-item#item10_1
+                    h3.Name_a.text#name_d 吳&nbsp;&nbsp;&nbsp;岱桀&emsp;&emsp;{&nbsp;&nbsp;# /＜&nbsp;&nbsp;}
+                    div.intro_a.text#intro_d 熱愛各式電影與音樂<br>但說到底戶外山林才是我的歸屬
+                div.grid-item#item10_2
+                    img.ab_us(src="./public/images/about_us/our-team-undone/yellow-square.svg", alt="yellow-square")
+                div.grid-item#item11_1(onclick="on_e()", onmouseover="on_e()", onmouseout="out_e()")
+                    img.ab_us#cover_e(src="./public/images/about_us/our-team-undone/under_cover/undercover_zong_04.png")
+                div.grid-item#item11_2
+                    img.ab_us#pic_e(src="./public/images/about_us/our-team-undone/no_cover/svg_file/nocover_zong.svg", alt="nocover_zong")
+                div.grid-item#item12_1
+                    h3.Name_a.text#name_e 陳&nbsp;&nbsp;&nbsp;信榕&emsp;&emsp;[&nbsp;&nbsp;+"+&nbsp;&nbsp;]
+                    div.intro_a.text#intro_e 會寫程式真的太猛了<br>完全看不懂<br>這學期就麻煩各位大大多多指教了 :)
+                div.grid-item#item12_2
+                    img.ab_us(src="./public/images/about_us/our-team-undone/yellow-square.svg", alt="yellow-square")
+        // ---------------------Contact us---------------------
+        section#Contact_us
+            div#part7
+                img.part(src="./public/images/about_us/part7/part7-background.svg", alt="part7-background")
+                img#info_left(src="./public/images/about_us/part7/get-in-touch.svg", alt="get-in-touch")
+                img#info_right(src="./public/images/about_us/part7/Follow us.svg", alt="follow us")
+                div.blog
+                    a(href=""): img.icon(src="./public/images/about_us/part7/google+.svg", alt="google+")
+                    a(href="https://www.instagram.com/uidd_lockerstore/", target="_blank"): img.icon(src="./public/images/about_us/part7/IG.svg", alt="ig")
+                    a(href="https://www.facebook.com/Uidd_LockerStore-110386727291098", target="_blank"): img.icon(src="./public/images/about_us/part7/FB.svg", alt="fb")
+        
+        // ---------------------Bottom button---------------------
+        footer
+            img.back_btn(src="./public/images/about_us/part8/back-to-top.svg", alt="back-to-top")
+        
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+        script(src="https://code.jquery.com/ui/1.12.1/jquery-ui.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js")
+        script(src='./index.js')
+        script(src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js")

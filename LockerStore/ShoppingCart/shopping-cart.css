@@ -1,0 +1,810 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+body{
+  margin: 0;
+}
+button{
+  position: absolute;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  padding: 0;
+  font-family: 'Noto Sans TC';
+}
+img{
+  position: absolute;
+}
+input{
+  font-family: 'Noto Sans TC';
+}
+div{
+    font-family: 'Noto Sans TC';
+}
+a{
+    font-family: 'Noto Sans TC';
+}
+
+.screen {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* shopping cart header  */
+#shopping-cart-header, #check-out-header{
+    position: relative;
+    width: 100%;
+    height: 14.8%; 
+}
+#back-arrow{
+    top: 39.2%;
+    left: 9.4%;
+    width: 4.4%;
+}
+#cross{
+    top: 39.2%;
+    left: 86.3%;
+    width: 4.2%;
+}
+#header-title{
+    position: absolute;
+    width: 100%;
+    top: 35%;
+    font-size: 14px;
+    color: #717071;
+    text-align: center;
+}
+#blue-space{
+    position: absolute;
+    width: 100%;
+    height: 25.2%;
+    top: 74.8%;
+    background-color: #2C50A1;
+}
+
+/* shopping cart content */
+#shopping-cart-content{
+    position: relative;
+    width: 100%;
+    height: 68.4%;
+}
+/* personal/group shopping cart */
+.personal-spc, .group-spc{
+    width: 100%;
+    height: auto;
+}
+.personal-spc-header{
+    position: relative;
+    width: 100%;
+    height: 38.5px;
+    background-color: #C9C9CA;
+}
+.group-spc-header{
+    position: relative;
+    width: 100%;
+    height: 38.5px;
+    background-color: #717071;
+}
+/* header */
+.spc-checkbox{
+    position: absolute;
+    margin: 0;
+    height: 36.4%;
+    top: 31.8%;
+    left: 9.4%;
+}
+.spc-store-name{
+    height: 51.9%;
+    width: 20.3%;
+    top: 24%;
+    left: 25.1%;
+    border-radius: 10px;
+    background-color: #2C50A1;
+    font-size: 12px;
+    font-weight: lighter;
+    color: white;
+}
+.spc-station-name{
+    height: 51.9%;
+    width: 20.3%;
+    top: 24%;
+    left: 54.8%;
+    border-radius: 10px;
+    background-color: #E8C41C;
+    font-size: 12px;
+    font-weight: lighter;
+    color: #221814;
+}
+.to-arrow{
+    width: 2.2%;
+    top: 32.7%;
+    left: 48.9%;
+}
+.spc-edit{
+    position: absolute;
+    width: 8.2%;
+    top: 12%;
+    left: 84.3%;
+}
+.spc-edit-dark{
+    color: #717071 !important;
+    font-family: 'Noto Sans TC';
+    font-size: 12px;
+}
+.spc-edit-light{
+    color: #C9C9CA !important;
+    font-family: 'Noto Sans TC';
+    font-size: 12px;
+}
+/* item */
+.spc-item{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #C9C9CA;
+}
+.spc-item-pic{
+    position: absolute;
+    width: 12.5%;
+    height: 75%;
+    top: 9.2%;
+    left: 7.6%;
+    background-color: #E8C41C;
+}
+.spc-item-discribe{
+    position: absolute;
+    width: 47.3%;
+    top: 6.2%;
+    left: 27.7%;
+    color: #717071;
+}
+.spc-item-name{
+    font-size: 12px;
+    margin: 0;
+}
+.spc-item-option{
+    font-weight: lighter;
+    font-size: 12px;
+    margin: 0;
+}
+.spc-item-price{
+    font-size: 12px;
+    margin: 0;
+}
+.spc-qty{
+    position: absolute;
+    top: 34.6%;
+    left: 81.1%;
+    width: 14.5%;
+    height: 32%;
+}
+.spc-qty-number{
+    position: absolute;
+    width: 33.3%;
+    height: 100%;
+    left: 33.3%;
+    top: 0;
+    padding: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C9C9CA;
+    text-align: center;
+    color: #2C50A1;
+    line-height: 14px;
+}
+.spc-qty-plus {
+    position: absolute;
+    width: 33.3%;
+    height: 100%;
+    left: 66.7%;
+    top: 0;
+    padding: 0;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-radius: 0 5px 5px 0;
+    border-color: #C9C9CA;
+    color: #2C50A1;
+    background-color: white;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.spc-qty-minus {
+    position: absolute;
+    width: 33.3%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 0;
+    border-width: 1px 0 1px 1px;
+    border-style: solid;
+    border-radius: 5px 0 0 5px;
+    border-color: #C9C9CA;
+    color: #2C50A1;
+    background-color: white;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.spc-item-delete{
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 2.2%;
+    height: 100%;
+    width: 18.8%;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+}
+/* footer */
+.group-spc-footer{
+    position: relative;
+    width: 100%;
+    height: 30px;
+    background-color: #717071;    
+}
+.group-spc-progress{
+    height: 66.7%;
+    width: 20.3%;
+    top: 16.7%;
+    left: 4.7%;
+    border-radius: 10px;
+    background-color: #F38200;
+    font-size: 12px;
+    font-weight: lighter;
+    color: white;
+}
+.group-spc-deadline{
+    position: absolute;
+    top: 16.7%;
+    left: 27.9%;
+    text-align: center;
+    color: #C9C9CA;
+    font-size: 12px;
+    font-weight: lighter;
+}
+.group-spc-share{
+    height: 66.7%;
+    width: 12.5%;
+    top: 16.7%;
+    left: 83%;
+    border-radius: 10px;
+    background-color: #F38200;
+    font-size: 12px;
+    font-weight: lighter;
+    color: white;
+}
+
+/* shopping cart footer */
+#spc-footer-upper{
+    position: absolute;
+    height: 7%;
+    width: 100%;
+    bottom: 9.7%;
+    border-width: 1px 0 0 0;
+    border-color: #C9C9CA;
+    border-style: solid;
+}
+#spc-footer-lower, #cko-footer{
+    position: absolute;
+    height: 9.7%;
+    width: 100%;
+    bottom: 0;
+    background-color: #C9C9CA;
+}
+#spc-order, #cko-order{
+    height: 58.2%;
+    width: 78.1%;
+    top: 20.9%;
+    left: 10.85%;
+    background-color: #E8C41C;
+    color: #221814;
+    border: 0;
+    border-radius: 3px;
+    font-size: 12px;
+}
+#spc-order:disabled{
+    background: #717071;
+}
+.spc-footer-checkbox{
+    position: absolute;
+    margin: 0;
+    height: 35%;
+    top: 32.5%;
+    left: 9.4%;
+}
+#spc-select-all{
+    position: absolute;
+    top: 27.4%;
+    left: 17%;
+    font-size: 12px;
+    color: #717071;
+}
+#spc-total-price{
+    position: absolute;
+    top: 27.4%;
+    right: 9.4%;
+    font-size: 12px;
+    color: #717071;
+}
+#spc-total-price-number{
+    font-size: 12px;
+    color: red;
+} 
+
+/* checkout */
+#check-out{
+    display: none;
+}
+/* store & items */
+#cko-name-block{
+    position: absolute;
+    height: 6.8%;
+    width: 100%;
+    background-color: #C9C9CA;
+}
+#cko-store-name{
+    position: absolute;
+    margin: 0;
+    top: 25.6%;
+    left: 6.2%;
+    color: #2C50A1;
+    font-size: 12px;
+}
+#check-out-content{
+    position: absolute;
+    top: 21.6%;
+    height: 31.7%;
+    width: 100%;
+}
+/* locker station */
+#cko-station-block{
+    position: absolute;
+    height: 6.8%;
+    width: 100%;
+    top: 53.3%;
+    background-color: #C9C9CA;
+}
+#cko-station-info{
+    position: absolute;
+    height: 51.9%;
+    width: 20.3%;
+    top: 23.7%;
+    left: 3.4%;
+    border-radius: 10px;
+    border-width: 1px; 
+    border-style: solid;
+    border-color: white;
+    background-color: #E8C41C;
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: center;
+    color: #221814;
+}
+#cko-station-position{
+    position: absolute;
+    height: 51.9%;
+    width: 20.3%;
+    top: 23.7%;
+    right: 8%;
+    border-radius: 10px;
+    border-width: 1px; 
+    border-style: solid;
+    border-color: #F38200;
+    background-color: white;
+    font-size: 12px;
+    color: #F38200;
+}
+#cko-station-discribe{
+    position: absolute;
+    height: 11.9%;
+    width: 100%;
+    top: 60%;
+}
+#cko-station-name{
+    position: absolute;
+    width: 100%;
+    padding-left: 5.8%;
+    top: 11.8%;
+    font-size: 12px;
+    color: #717071;
+}
+#cko-station-address{
+    position: absolute;
+    width: 100%;
+    padding-left: 5.8%;
+    top: 36.3%;
+    font-size: 12px;
+    color: #717071;
+}
+#cko-station-name-value{
+    position: absolute;
+    top: 11.8%;
+    right: 11.1%;
+    font-size: 12px;
+    color: #2C50A1;
+}
+#cko-station-address-value{
+    position: absolute;
+    top: 36.3%;
+    right: 11.1%;
+    font-size: 12px;
+    color: #2C50A1;
+}
+#cko-arrive-time{
+    position: absolute;
+    width: 100%;
+    padding-left: 5.8%;
+    top: 59.8%;
+    font-size: 12px;
+    color: #717071;
+}
+#cko-arrive-time-value{
+    position: absolute;
+    top: 59.8%;
+    right: 11.1%;
+    font-size: 12px;
+    color: #2C50A1;
+}
+/* payment */
+#cko-payment-block{
+    position: absolute;
+    height: 6.8%;
+    width: 100%;
+    top: 72%;
+    background-color: #C9C9CA;
+}
+#cko-payment-way{
+    position: absolute;
+    height: 51.9%;
+    width: 20.3%;
+    top: 23.7%;
+    left: 3.4%;
+    border-radius: 10px;
+    border-width: 1px; 
+    border-style: solid;
+    border-color: white;
+    background-color: #E8C41C;
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: center;
+    color: #221814;
+}
+#cko-payment-choose{
+    position: absolute;
+    height: 51.9%;
+    width: 28.9%;
+    top: 23.7%;
+    right: 8%;
+    border-radius: 10px;
+    border-width: 1px; 
+    border-style: solid;
+    border-color: #F38200;
+    background-color: white;
+    font-size: 12px;
+    color: #F38200;
+}
+#cko-payment-discribe{
+    position: absolute;
+    height: 11.9%;
+    width: 100%;
+    top: 78.8%;
+}
+#cko-total-item{
+    position: absolute;
+    width: 100%;
+    padding-left: 5.8%;
+    top: 11.8%;
+    font-size: 12px;
+    color: #717071;
+}
+#cko-total-item-value{
+    position: absolute;
+    top: 11.8%;
+    right: 11.1%;
+    font-size: 12px;
+    color: #717071;
+}
+#cko-total-fare{
+    position: absolute;
+    width: 100%;
+    padding-left: 5.8%;
+    top: 36.3%;
+    font-size: 12px;
+    color: #717071;
+}
+#cko-total-fare-value{
+    position: absolute;
+    top: 36.3%;
+    right: 11.1%;
+    font-size: 12px;
+    color: #717071;
+}
+#cko-total{
+    position: absolute;
+    width: 100%;
+    padding-left: 5.8%;
+    top: 59.8%;
+    font-size: 12px;
+    color: #717071;
+}
+#cko-total-value{
+    position: absolute;
+    top: 59.8%;
+    right: 11.1%;
+    font-size: 12px;
+    color: #717071;
+}
+#cko-total-value-red{
+    font-size: 12px;
+    font-family: 'Noto Sans TC';
+    color: red;
+}
+
+/* group share */
+#group-share{
+    position: fixed;
+    display: none;
+    width: 78.2vw;
+    height: 9.7vh;
+    bottom: 0;
+    left: 10.9vw;
+    border-style: solid;
+    border-color: #2C50A1;
+    border-width: 2px;
+    border-radius: 10px 10px 0 0;
+    background-color: white;
+    font-size: 12px;
+    color: #717071;
+}
+#share-link{
+    position: absolute;
+    width: 10%;
+    left: 38.9%;
+    top: 31.2%;
+}
+#share-line{
+    position: absolute;
+    width: 10%;
+    left: 53.7%;
+    top: 31.2%;
+}
+#share-ms{
+    position: absolute;
+    width: 10%;
+    left: 68.5%;
+    top: 31.2%;
+}
+#share-fb{
+    position: absolute;
+    width: 10%;
+    left: 83.3%;
+    top: 31.2%;
+}
+
+/* position confirm */
+#map-position{
+    position: fixed;
+    display: none;
+    height: 46.7vh;
+    width: 100vw;
+    bottom: 0;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #C9C9CA;
+    border-radius: 10px 10px 0 0;
+    background-color: white;
+}
+#map-position-map{
+    position: absolute;
+    height: 64%;
+    width: 78.1%;
+    top: 8.3%;
+    left: 10.9%;
+    background-color: #C9C9CA;
+}
+#map-position-footer{
+    position: absolute;
+    height: 20.7%;
+    width: 100%;
+    bottom: 0;
+    background-color: #C9C9CA;
+}
+#map-position-confirm{
+    position: absolute;
+    height: 58.2%;
+    width: 78.1%;
+    top: 20.9%;
+    left: 10.9%;
+    bottom: 0;
+    background-color: #F38200;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    border-width: 0;
+}
+
+/* choose payment */
+#choose-payment{
+    position: fixed;
+    display: none;
+    height: 28vh;
+    width: 100vw;
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #C9C9CA;
+    background-color: white;
+    font-size: 12px;
+    color: #717071;
+}
+#choose-payment-footer{
+    position: absolute;
+    height: 34.6%;
+    width: 100%;
+    bottom: 0;
+    background-color: #C9C9CA;
+}
+#choose-payment-confirm{
+    position: absolute;
+    height: 58.2%;
+    width: 78.1%;
+    top: 20.9%;
+    left: 10.9%;
+    bottom: 0;
+    background-color: #F38200;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    border-width: 0;
+}
+.choose-payment-btn{
+    position: absolute;
+    width: 28.9%;
+    height: 12.6%;
+    left: 35.4%;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #F38200;
+    background-color: white;
+    font-weight: lighter;
+    color: #F38200;
+    font-size: 12px;
+}
+#choose-payment-cash{
+    top: 8.1%;
+}
+#choose-payment-bank{
+    top: 26.6%;
+}
+#choose-payment-card{
+    top: 45.6%;
+}
+
+/* item option */
+#item-option{
+    position: fixed;
+    display: none;
+    height: 42.3vh;
+    width: 100vw;
+    bottom: 0;
+    border-radius: 10px 10px 0 0;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #C9C9CA;
+    background-color: white;
+    font-size: 12px;
+    color: #717071;
+}
+#item-option-pic{
+    position: absolute;
+    width: 12.5%;
+    height: 18.8%;
+    left: 7.4%;
+    top: 8.9%;
+    background-color: #E8C41C;
+}
+#item-option-name{
+    position: absolute; 
+    left: 27.7%; 
+    top: 7.4%;
+}
+#item-option-price{
+    position: absolute; 
+    left: 27.7%; 
+    top: 21.1%;
+}
+#item-option-option{
+    position: absolute;
+    width: 100%;
+    height: 29.3%;
+    top: 30.8%;
+    border-width: 1px 0 1px 0;
+    border-style: solid;
+    border-color: #C9C9CA;
+}
+#item-option-number{
+    position: absolute;
+    width: 100%;
+    height: 16.9%;
+    top: 60.1%;
+}
+#item-option-footer{
+    position: absolute;
+    height: 22.9%;
+    width: 100%;
+    bottom: 0;
+    background-color: #C9C9CA;
+}
+#item-option-confirm{
+    position: absolute;
+    height: 58.2%;
+    width: 78.1%;
+    top: 20.9%;
+    left: 10.9%;
+    bottom: 0;
+    background-color: #F38200;
+    color: white;
+    font-size: 14px;
+    border-radius: 3px;
+    border-width: 0;
+}
+#item-option-ice{
+    position: absolute;
+    width: 12.5%;
+    height: 24.9%;
+    left: 25.5%;
+    top: 19.9%;
+    background-color: #221814;
+    color: #C9C9CA;
+    font-size: 12px;
+    text-align: center;
+}
+#item-option-sugar{
+    position: absolute;
+    width: 12.5%;
+    height: 24.9%;
+    left: 25.5%;
+    top: 56.2%;
+    background-color: #221814;
+    color: #C9C9CA;
+    font-size: 12px;
+    text-align: center;
+}
+.item-option-ice-btn{
+    position: absolute;
+    width: 12.5%;
+    height: 24.9%;
+    top: 19.9%;
+    background-color: #C9C9CA;
+    color: #717071;
+    font-size: 12px;
+    border: 0;
+}
+.item-option-sugar-btn{
+    position: absolute;
+    width: 12.5%;
+    height: 24.9%;
+    top: 56.2%;
+    background-color: #C9C9CA;
+    color: #717071;
+    font-size: 12px;
+    border: 0;
+}
+#item-option-ice-10, #item-option-sugar-10{
+    left: 39.1%;
+}
+#item-option-ice-7, #item-option-sugar-5{
+    left: 53.7%;
+}
+#item-option-ice-3, #item-option-sugar-3{
+    left: 68.4%;
+}
+#item-option-ice-0, #item-option-sugar-0{
+    left: 83%;
+}

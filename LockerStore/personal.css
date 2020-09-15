@@ -1,0 +1,233 @@
+.float_window{
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    margin:auto;
+}
+.left_side{
+    display: inline-block;
+    background-color: #2C50A1;
+    width: 80%;
+    height: 100%;
+    float:left;
+}
+.status{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.cart{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.address{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.pay_way{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.recent_event{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.invite{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.notification{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.partner{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.service_center{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.log_out{
+    color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    margin-bottom:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.middle{
+    display: inline-block;
+    background-color: #004092;
+     width:20%;
+    height: 100%;
+    float: left;
+}
+.right_side{
+    display: none;
+    background-color: #2C50A1;
+    width:80%;
+    height: 100%;
+    float: right;
+}
+.photo{
+    background-color: #2C50B1;
+    border-radius:50%;
+    width:42px;
+    height:42px;
+    border: none;
+    margin:auto;
+    position: relative;
+    top:5%;
+    z-index:2;
+}
+.small_camera{
+    position: relative;
+    left:50%;
+    background-color: #2C50B1;
+    top:2%;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    border: none;
+    z-index:1;
+}
+.arrow-img{
+    background-color: #2C50B1;
+    border: none;
+    transform:rotate(180deg);
+    position: relative;
+    top:40%;
+    left:35%;
+    border-radius:50%;
+    width:33.61px;
+    height:33.61px;
+}
+.user_name{
+    height:10%;
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:14px;
+}
+.title{
+    height:10%;
+    line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.history{
+    height:10%;
+    color:#EBB600;
+    line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:14px;
+}
+.phone_number{
+color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.mail{
+color:#FFFFFF;
+     line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.purchase_count{
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.purchase_num{
+    color:#EBB600;
+}
+.score_count{
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.score_num{
+    color:#EBB600;
+}
+.comment_count{
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.comment_num{
+    color:#EBB600;
+}
+.follow_count{
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.follow_num{
+    color:#EBB600;
+}
+.launch_count{
+    color:#FFFFFF;
+    line-height: 8vh;
+    margin-left:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+.launch_num{
+    color:#EBB600;
+}
+.edit{
+    line-height: 8vh;
+    color:#F39700;
+    margin-left:10%;
+     margin-bottom:10%;
+    font-family:"century gothic";
+    font-size:12px;
+}
+button[type="button"]
+{
+    outline:none;
+}

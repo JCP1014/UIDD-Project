@@ -1,0 +1,96 @@
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta content="width=device-width, initial-scale=1" name="viewport" />
+	<title>Shopping Cart</title>
+	<link rel="Shortcut Icon" type="image/x-icon" href="./public/images/about_us/part5/part5-logo.svg" />
+	<script src="./public/stylesheets/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<link href="./shopping_cart.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+	<!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Launch demo modal
+    </button>
+	
+	
+	<!--small window-->
+	<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+        		<div class="modal-content" style="border-radius: 15px 15px 15px 15px;">
+		 		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        		<img src="public/images/a5/a5-08.svg"></img>
+                    		</button>
+		    		<div class="modal-header">
+			    		<img class="cart_logo" src="public/images/a5/a5-07.svg"></img> <!--My Kart字樣-->
+		    		</div> <!--modal-header-->
+		 	<div class="modal-body">
+				
+				<!--div class="grid-container"-->
+				<div id="default" class="item1_all" type="button" onclick="submit(this)">
+					<div class="item1">
+						<div class="shop_pic">
+						<!--img style="display:block; z-index:1;" src="public/images/a5/a5-11.svg"-->
+						<!--img style="z-index:2;" src="public/images/a5/a5-14.svg"></img-->
+						</div>  <!--shop_pic-->
+					<!--div class="col"-->
+						<!--img class="small_cross" src="public/images/a5/a5-13.svg"></img-->
+				<div class="shop_info">
+						<div class="shop_name">
+							<span>Store Name</span>
+						</div> <!--shop_name-->
+						<div class="shop_content">
+							<span>TEL:06-1234567</span><br>
+							<span>ADDRESS:NO.123</span>
+						</div> <!--shop_content-->
+						
+						<br>
+						<div class="locker_name">
+							<span>Station Name - 02</span>
+						</div> <!--locker_name-->
+						<div class="locker_content">
+							<span>Pickup address: NO.123 Tainan</span>
+						</div> <!--locker_content-->
+				</div> <!--shop_info-->	
+					<!--/div--> <!--col-->
+	</div>  <!--item1-->
+				<!--/div--> <!--grid-container-->
+				
+	
+	
+				<div class="main-menu">
+					<span class="more-info">More Information</span>  
+					<button type="button" class="btn arrow-btn" onclick="showDetail()">
+                                    	<!--img class="arrow-img" src="public/images/a6/a6-22.svg" /-->
+                                	</button>
+    					<ul id="SubMenu2" class="sub-menu">
+        					<li>Product Name 1&emsp;<img src="public/images/a5/a5-43.svg"></img>&emsp;<span>$100</span>&emsp;<img src="public/images/a5/a5-49.svg"></img></li>
+        					<li>Product Name 2&emsp;<img src="public/images/a5/a5-43.svg"></img>&emsp;<span>$100</span>&emsp;<img src="public/images/a5/a5-49.svg"></img></li>
+        					<li>Product Name 3&emsp;<img src="public/images/a5/a5-43.svg"></img>&emsp;<span>$100</span>&emsp;<img src="public/images/a5/a5-49.svg"></img></li><br>
+						<img src="public/images/a5/a5-35.svg"></img><br><br>
+						<img src="public/images/a5/a5-33.svg"></img>
+    					</ul>
+				</div>  <!--main-menu-->
+		 		</div>  <!--item1_all-->
+
+		 </div> <!--modal-body-->
+		<div class="modal-footer" type="button" data-dismiss="modal" aria-label="Close">
+				<button type="button" class="order_btn">
+			 		<!--img src="public/images/a5/a5-24.svg"></img--><!--order字樣-->
+					<span>Order</span>
+				</button> 
+		</div>  <!--modal-footer-->
+		 </div> <!--modal-content-->
+	</div> <!--modal-dialog modal-dialog-centered-->
+	</div> <!--modal fade-->
+	<script src='./shopping_cart.js'></script>
+	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

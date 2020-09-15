@@ -1,0 +1,111 @@
+#part5 {
+  position: relative;
+  padding-bottom: 4.5vh; }
+
+#logo_1 {
+  width: 5.8%;
+  position: absolute;
+  top: 21%;
+  left: 15.9%;
+  opacity: 0; }
+
+#logo_2 {
+  width: 11%;
+  position: absolute;
+  top: 30.5%;
+  left: 11%;
+  opacity: 0; }
+
+#logo_3 {
+  width: 5.8%;
+  position: absolute;
+  bottom: 26%;
+  right: 16%;
+  opacity: 0; }
+
+#logo_4 {
+  width: 11%;
+  position: absolute;
+  bottom: 36%;
+  right: 11.1%;
+  opacity: 0; }
+
+#logo_1_show {
+  width: 5.8%;
+  position: absolute;
+  top: 21%;
+  left: 15.9%;
+  opacity: 0;
+  animation-name: fade_in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+#logo_2_show {
+  width: 11%;
+  position: absolute;
+  top: 30.5%;
+  left: 11%;
+  opacity: 0;
+  animation-name: fade_in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+#logo_3_show {
+  width: 5.8%;
+  position: absolute;
+  bottom: 26%;
+  right: 16%;
+  opacity: 0;
+  animation-name: fade_in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+#logo_4_show {
+  width: 11%;
+  position: absolute;
+  bottom: 36%;
+  right: 11.1%;
+  opacity: 0;
+  animation-name: fade_in;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+#logo_1_hide {
+  width: 5.8%;
+  position: absolute;
+  top: 21%;
+  left: 15.9%;
+  opacity: 0;
+  animation-name: fade_out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+#logo_2_hide {
+  width: 11%;
+  position: absolute;
+  top: 30.5%;
+  left: 11%;
+  opacity: 0;
+  animation-name: fade_out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+#logo_3_hide {
+  width: 5.8%;
+  position: absolute;
+  bottom: 26%;
+  right: 16%;
+  opacity: 0;
+  animation-name: fade_out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }
+
+#logo_4_hide {
+  width: 11%;
+  position: absolute;
+  bottom: 36%;
+  right: 11.1%;
+  opacity: 0;
+  animation-name: fade_out;
+  animation-duration: 1s;
+  animation-fill-mode: forwards; }

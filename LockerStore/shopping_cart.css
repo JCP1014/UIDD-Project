@@ -1,0 +1,211 @@
+.modal-dialog-scrollable .modal-content {
+    max-height: calc(100vh - 1rem);
+    overflow: visible;
+}
+.cart_logo{
+  display:block; 
+  margin:auto; 
+  padding:0;
+}
+.shop_pic{
+  display: inline-block;
+    background-color: #C9C9CA;
+    width: 25%;
+    height: 100%;
+    float: left;
+    border-radius: 12px 0px 0px 12px;
+  }
+.shop_info{
+  display: inline-block;
+    background-color: #ffffff;
+    width: calc(75% - 3pt);
+    height: 100%;
+    float: right;
+    border-radius: 0px 12px 12px 0px;
+    padding: 10pt;
+}
+.shop_name{
+  color: #2C50A1;
+  font-family:"century gothic";
+  font-weight:bold;
+  font-size:14pt;
+  text-align: left;
+}
+.shop_content{
+  font-family:"century gothic";
+  color: #595757;
+  font-size:10pt;
+  text-align: left;
+}
+.locker_name{
+  color: #F39700;
+  font-family:"century gothic";
+  font-weight:bold;
+  font-size:14pt;
+  text-align: left;
+}
+.locker_content{
+  font-family:"century gothic";
+  color: #595757;
+  font-size:10pt;
+  text-align: left;
+}
+/*.item1 {
+  grid-area: myArea;
+}*/
+.item1{
+  height: 140pt;
+    width: 100%;
+    border: 0;
+}
+.item1_all{
+  width: 90%;
+    background-color: #2C50A1;
+    border: 3pt #2C50A1 solid;
+    margin: 15px auto;
+    border-radius: 15px;
+}
+.after_click{
+  width: 90%;
+    background-color: #2C50A1;
+    border: 5pt #F39700 solid;
+    margin: 15px auto;
+    border-radius: 15px;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas: 'myArea myArea . . .' 'myArea myArea . . .';
+  grid-gap: 0px;
+  width:90%;
+  border-style: solid;
+  border-color: #2C50A1;
+  border-radius: 7.5px;
+  border-width:3px;
+ background-color:#FFFFFF; 
+ padding:0;
+ margin:auto
+}
+
+.grid-container > div {
+  text-align: left;
+}
+
+
+
+
+.main-menu { /* 主選單的樣式 */
+  color:#FFFFFF; 
+  background-color:#2C50A1; 
+  margin: 0 auto;
+  cursor:pointer; 
+  /*display:inline-block; */
+  width:90%; 
+  font-family:"century gothic";
+  font-weight:bold;
+   padding:0;
+  border-style: solid;
+  border-color: #2C50A1;
+  border-radius: 0px 0px 7.5px 7.5px;
+  border-width:3px;
+} 
+/*.main-menu:hover { background-color:#0000FF; }*/
+.sub-menu { /* 下拉清單的樣式 */
+  color:#FFFFFF; 
+  background-color:#2C50A1; 
+  list-style-type:none; 
+  /*position:absolute;*/
+  width:90%;
+  font-family:"century gothic";
+display:none;
+  border-style: solid;
+  border-color: #2C50A1;
+  border-radius: 7.5px;
+  border-width:3px;
+} 
+.sub-menu li { /* 下拉清單每一列的樣式 */
+  padding: 3px 5px; 
+  text-align:left; 
+  width:90%;
+  font-family:"century gothic";
+  font-weight:bold;
+  font-size:10pt;
+  border-bottom-style:solid;
+  border-color: #FFFFFF;
+  border-width:1px;
+} 
+/*.sub-menu li:hover { color:#FFFFFF; background-color:#2C50A1; }*/
+.more-info{
+  margin-left:30%;
+  font-family:"century gothic";
+  font-weight:bold;
+  font-size:14pt;
+}
+.arrow-btn {
+    background-color: #2C50A1;
+    width: 20pt;
+    height: 20pt;
+    border: 0;
+    display: inline-block;
+    position: relative;
+    top: 15%;
+    right: 6pt;
+    float: right;
+    background-image: url(public/images/a6/a6-22.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.arrow-img {
+    display: inline-block;
+    position: relative;
+    right: 4pt;
+    bottom: 5pt;
+}
+.del_btn{
+  margin-right:3pt;
+}
+button
+{
+    outline: none;
+}
+.order_btn{
+ text-align:center;
+  /*line-height:50pt;*/
+  padding: 0;  
+  border:0;
+  margin:0 auto;
+  font-family:"century gothic";
+  font-weight:bold;
+  color: #2C50A1;
+  background-color:#E8C41C; 
+  font-size:21pt;
+}
+.close {
+    height: 30pt;
+    width: 30pt;
+    position: absolute;
+    right:-15pt;
+    top:-15pt;
+    opacity:1.0;
+}
+.modal-content{
+    height: 90vh;
+    width: 40vw;
+    border-radius: 15px 15px 15px 15px;
+  /*max-height:90vh;*/
+  /*overflow: hidden;*/
+}
+.modal-footer{
+  padding: 0;
+  margin:0;
+  border:0;
+  background-color:#E8C41C;
+  border-radius: 0px 0px 15px 15px;
+  height:50pt;
+bottom: 0
+}
+.modal-body {
+    padding: 0;
+}
+.modal-header{
+  /*border-radius: 15px 15px 0px 0px;*/
+}

@@ -1,0 +1,140 @@
+* {
+    font-family: "Century Gothic";
+}
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+html, body, #map-canvas { 
+    height: 100%; 
+    margin: 0; 
+    padding: 0;
+}
+::placeholder {
+    color: #9d9d9d;
+    font-weight: 500;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 1.1vw;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+#map-canvas {
+    z-index: -2;
+}
+#onMap_top {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+#searchdBox {
+    position: relative;
+    
+}
+#menu_btn {
+    position: absolute;
+    padding: 0;
+    width: 1.15vw;
+    top: 50%;
+    left: 2.5%;
+    border: 0;
+}
+#keywordBlank{
+    border-width: 0.18rem;
+    border-color: #2c50a2;
+    border-radius: 0.6rem;
+    width: 26vw;
+    padding: 2% 2% 2% 15%;
+}
+#search_btn {
+    position: absolute;
+    padding: 0;
+    width: 3vw;
+    top: 30%;
+    left: 23.35%;
+    border: 0;
+}
+#square {
+    width: 1.6vw;
+    margin-top: 45%;
+    margin-left: -66%;
+}
+#sign_onMap {
+    width: 6.5vw;
+    margin-top: 4%;
+}
+#onMap_bottom {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+}
+#locate{
+    width: 1.9vw;
+}
+#zoom {
+    position: relative;
+}
+#zoom_rec {
+    width: 1.9vw;
+}
+#zoom_in{
+    position: absolute;
+    top: 15%;
+    left: 29%;
+    width: 0.75vw;
+}
+#zoom_out {
+    position: absolute;
+    top: 70%;
+    left: 31%;
+    width: 0.75vw;
+}
+#front{
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+#sign_front {
+    width: 6.5vw;
+}
+#logo {
+    width: 6.7vw;
+}
+#slogan {
+    width: 63vw;
+}
+#searchBar {
+    position: relative;
+    margin-left: 29%;
+    margin-top: 0.5%;
+}
+input {
+    font-size: 1.2rem;
+    padding: 2% 2% 2% 10%;
+    width: 34.5vw;
+    border: 2px solid #ccc;
+    outline: none;
+}
+#loc_icon {
+    position: absolute;
+    padding: 0;
+    width: 1.2vw;
+    top: 26%;
+    left: 4%;
+    border: 0;
+    cursor: pointer;
+}
+#find_btn {
+    position: absolute;
+    padding: 0;
+    width: auto;
+    height: 96%;
+    margin: 0.1% 0 0 2.4%;
+    border: 0;
+    cursor: pointer;
+}

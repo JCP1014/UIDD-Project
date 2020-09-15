@@ -1,0 +1,87 @@
+#part3 {
+  position: relative;
+  padding-bottom: 4.5vh; }
+
+.dialog {
+  position: absolute;
+  height: 10.2%;
+  width: auto;
+  display: inline-block; }
+
+#d1 {
+  top: 15%;
+  left: 15%;
+  opacity: 0; }
+
+#d2 {
+  top: 26%;
+  right: 3%;
+  opacity: 0; }
+
+#d3 {
+  top: 37%;
+  left: 16.5%;
+  opacity: 0; }
+
+#d4 {
+  top: 15%;
+  right: 21%;
+  opacity: 0; }
+
+#d5 {
+  top: 26%;
+  left: 6%;
+  opacity: 0; }
+
+#d6 {
+  top: 37%;
+  right: 8.3%;
+  opacity: 0; }
+
+#d1_show {
+  top: 15%;
+  left: 15%;
+  opacity: 0;
+  animation-name: fade_in_and_out;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; }
+
+#d2_show {
+  top: 26%;
+  right: 3%;
+  opacity: 0;
+  animation-name: fade_in_and_out;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; }
+
+#d3_show {
+  top: 37%;
+  left: 16.5%;
+  opacity: 0;
+  animation-name: fade_in_and_out;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; }
+
+#d4_show {
+  top: 15%;
+  right: 21%;
+  opacity: 0;
+  animation-name: fade_in_and_out;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; }
+
+#d5_show {
+  top: 26%;
+  left: 6%;
+  opacity: 0;
+  animation-name: fade_in_and_out;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; }
+
+#d6_show {
+  top: 37%;
+  right: 8.3%;
+  opacity: 0;
+  animation-name: fade_in_and_out;
+  animation-duration: 3s;
+  animation-fill-mode: forwards; }

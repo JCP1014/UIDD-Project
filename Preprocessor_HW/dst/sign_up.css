@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+* {
+  font-family: "Century Gothic"; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 1.1vw; }
+
+::placeholder {
+  color: #9d9d9d;
+  font-weight: 500; }
+
+body {
+  margin: 0 0;
+  padding: 0 0;
+  overflow-x: hidden;
+  max-width: 100vw; }
+
+.background {
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 0;
+  margin: 0; }
+
+img {
+  width: auto;
+  height: auto;
+  display: inline-block;
+  /*max-width: 100%; */
+  /*max-height: 100%; */ }
+
+.header {
+  position: relative; }
+
+.image {
+  width: 100%; }
+
+div {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none;
+  user-select: none;
+  color: #757575; }
+
+ul {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0; }
+
+.logo {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 5.5vw;
+  width: 6.7vw; }
+
+.main_nav {
+  margin: 1.6% 0 2.6% 0;
+  text-align: center; }
+
+li {
+  display: inline-block;
+  margin: 0 0 0 5%; }
+  li a:active {
+    font-weight: bold;
+    color: #000000; }
+
+.menu {
+  width: 60%;
+  font-size: 1rem;
+  padding: 1.1% 0 0 0; }
+
+.home {
+  position: relative;
+  top: 0;
+  left: 0; }
+
+input {
+  display: inline-block;
+  font-size: 20px;
+  size: auto; }
+
+#ajax-form {
+  position: absolute;
+  top: 30%;
+  left: 35%;
+  text-align: right;
+  size: auto; }
+
+#check_same {
+  display: inline-block;
+  position: absolute;
+  top: 42%;
+  left: 60%;
+  color: red;
+  font-weight: 700; }
+
+#submit_btn {
+  font-family: "Century Gothic";
+  font-size: 20px;
+  display: block;
+  position: relative;
+  top: 2vh;
+  left: 17vw; }
+
+#userName {
+  display: none;
+  position: absolute;
+  top: 30%;
+  left: 23.5%;
+  z-index: 100;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: right;
+  width: 27%; }
+
+#t1 {
+  display: none;
+  position: absolute;
+  top: 29.3%;
+  left: 51.5%;
+  z-index: 100;
+  font-size: 25px; }
+
+#t2 {
+  display: none;
+  position: absolute;
+  top: 35%;
+  left: 49%;
+  z-index: 100;
+  font-size: 25px; }
+
+#t3 {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  font-size: 20px; }

@@ -1,0 +1,277 @@
+<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLong" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <button type="button" class="btn close" data-dismiss="modal" aria-label="Close">
+                <img src="public/images/a6/a6-08.svg"/>
+            </button>
+            <div class="modal-header">
+                <img class="modal-title" id="exampleModalLongTitle" src="public/images/a6/a6-06.svg"/>
+            </div>
+            <div class="modal-body">
+                <form class="form-inline order-navbar">
+                    <button class="btn order-nav-lbtn" type="button" onclick="showLeft()">Undelivered</button>
+                    <button class="btn order-nav-mbtn" type="button" onclick="showMid()">Unacclaimed</button>
+                    <button class="btn order-nav-rbtn" type="button" onclick="showRight()">Completed</button>
+                </form>
+                <div class="order-content order-content-left">
+                    <div class="order-object">
+                        <div class="order-object-content">
+                            <div class="order-object-content-pic"></div>
+                            <div class="order-object-content-info">
+                                <div class="order-object-content-info-text">
+                                    <p class="store-name">Store Name </p>
+                                    <p class="text-content store-tel-addr">0912-345-678<br>701, Tainan City, East District, Yidong Road, No.50, 2F</p>
+                                    <p class="station-name">Station Name - 02</p>
+                                    <p class="text-content station-addr">Pickup address 701, Tainan City, East District, Shengli Road, No.58</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-object-detail">
+                            <div class="order-object-detail-fake"></div>
+                            <div class="order-object-detail-content">
+                                <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                       6
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                        2
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                        4
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <img class="payment-img" src="public/images/a6/a6-36.svg" />
+                                <p class="order-number">Order number : 01234567</p>
+                                <p class="pickup-code">Pick-up Code : A1B2C3D4</p>
+                            </div>
+                        </div>
+                        <div class="order-object-bottom">
+                            <img class="group-buy" src="public/images/a6/a6-14.svg" />
+                            <p class="delivery-time">Estimated delivery time : 2020.05.20</p>
+                            <button type="button" class="btn arrow-btn" onclick="showDetail()">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-content order-content-mid">
+                    <div class="order-object">
+                        <div class="order-object-content">
+                            <div class="order-object-content-pic"></div>
+                            <div class="order-object-content-info">
+                                <div class="order-object-content-info-text">
+                                    <p class="store-name">Store Name </p>
+                                    <p class="text-content store-tel-addr">0912-345-678<br>701, Tainan City, East District, Yidong Road, No.50, 2F</p>
+                                    <p class="station-name">Station Name - 02</p>
+                                    <p class="text-content station-addr">Pickup address 701, Tainan City, East District, Shengli Road, No.58</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-object-detail">
+                            <div class="order-object-detail-fake"></div>
+                            <div class="order-object-detail-content">
+                                <div class="order-object-detail-content-item" style="display:none;">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                       12
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <!-- <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                        5
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                        8
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div> -->
+                                <img class="payment-img" src="public/images/a6/a6-36.svg" />
+                                <p class="order-number">Order number : 01234567</p>
+                                <p class="pickup-code">Pick-up Code : A1B2C3D4</p>
+                            </div>
+                        </div>
+                        <div class="order-object-bottom">
+                            <img class="group-buy" src="public/images/a6/a6-14.svg" />
+                            <p class="pickup-deadline">Pickup deadline : 2020.05.25 - 12:00</p>
+                            <button type="button" class="btn arrow-btn" onclick="showDetail()">
+                            </button>
+                        </div>
+                    </div>
+                    <!-- <div class="order-object">
+                        <div class="order-object-content">
+                            <div class="order-object-content-pic"></div>
+                            <div class="order-object-content-info">
+                                <div class="order-object-content-info-text">
+                                    <p class="store-name">Store Name </p>
+                                    <p class="text-content store-tel-addr">0912-345-678<br>701, Tainan City, East District, Yidong Road, No.50, 2F</p>
+                                    <p class="station-name">Station Name - 02</p>
+                                    <p class="text-content station-addr">Pickup address 701, Tainan City, East District, Shengli Road, No.58</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-object-detail">
+                            <div class="order-object-detail-fake"></div>
+                            <div class="order-object-detail-content">
+                                <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                        2
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                        6
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                        1
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <img class="payment-img" src="public/images/a6/a6-36.svg" />
+                                <p class="order-number">Order number : 01234567</p>
+                                <p class="pickup-code">Pick-up Code : A1B2C3D4</p>
+                            </div>
+                        </div>
+                        <div class="order-object-bottom">
+                            <img class="group-buy" src="public/images/a6/a6-14.svg" />
+                            <p class="pickup-deadline">Pickup deadline : 2020.05.25 - 12:00</p>
+                            <button type="button" class="btn arrow-btn" onclick="showDetail()">
+                            </button>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="order-content order-content-right">
+                    <div class="order-object">
+                        <div class="order-object-content">
+                            <div class="order-object-content-pic"></div>
+                            <div class="order-object-content-info">
+                                <div class="order-object-content-info-text">
+                                    <p class="store-name">Store Name </p>
+                                    <p class="text-content store-tel-addr">0912-345-678<br>701, Tainan City, East District, Yidong Road, No.50, 2F</p>
+                                    <p class="station-name">Station Name - 02</p>
+                                    <p class="text-content station-addr">Pickup address 701, Tainan City, East District, Shengli Road, No.58</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-object-detail">
+                            <div class="order-object-detail-fake"></div>
+                            <div class="order-object-detail-content">
+                                <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                        15
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                        6
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <div class="order-object-detail-content-item">
+                                    <div class="product-name">
+                                        <p class="product-name-text">Product name</p>
+                                        <p class="product-name-remark">No ice</p>
+                                    </div>
+                                    <div class="product-number">
+                                        9
+                                    </div>
+                                    <div class="product-price">
+                                        <p class="product-price-text">$100</p>
+                                    </div>
+                                </div>
+                                <img class="payment-img" src="public/images/a6/a6-36.svg" />
+                                <p class="order-number">Order number : 01234567</p>
+                                <p class="pickup-code">Pick-up Code : A1B2C3D4</p>
+                            </div>
+                        </div>
+                        <div class="order-object-bottom">
+                            <img class="group-buy" src="public/images/a6/a6-14.svg" />
+                            <img class="give-comment" src="public/images/a6/a6-45.svg"/>
+                            <button type="button" class="btn arrow-btn" onclick="showDetail()">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

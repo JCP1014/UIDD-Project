@@ -1,0 +1,17 @@
+section {
+    min-height: 100%;
+}
+.part {
+    position: relative;
+    width: 100%;
+    display: block;
+}
+footer{
+    background-color: #E8C31C;
+}
+.back_btn {
+    width: 12%;
+    margin: 2.1% 0 1.7% 44%;
+    text-align:center;
+    cursor: pointer;
+}
